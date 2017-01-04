@@ -1,0 +1,68 @@
+cc-lib                             Tom 7       11 Jun 2016
+
+Like my much more impressive "sml-lib", this is my attempt to get
+all of my frequently used C++ libraries into a single place so that
+different copies don't accumulate different changes.
+
+I try to use portable style where possible to make compiling against
+this easy. I hate complicated makefiles, actually basically all build
+systems, library dependencies, autoconf, and that stuff. But ultimately
+it's kind of complicated, you know?
+
+I'm pretty much on C++11 everywhere now, so these libraries may use
+C++11 features. It's worth it. GCC 4.8 and later have pretty complete
+support. As of 2016 I've started using C++14 too. On Windows, I'm using
+TDM-GCC. On linux, just get the newest GCC.
+
+A lot of what's here is google "base" libraries, since those are quite
+useful and I know them well. They have been released multiple times
+under open-source licenses; particularly the Apache 2.0 license, which
+is in APACHE20. Googletest is the "new BSD" license, in gtest/LICENSE.
+
+Sean Barrett's excellently simple stb_* libraries are in the public
+domain; see the notices at the tops of those files. I've made some
+modifications to them.
+
+Some of the numerical routines in randutil are based on Numpy. If you
+believe that this is a "copy" or "substantial portion", then please
+abide by Numpy's permissive license; see NUMPY.LICENSE.
+
+The base64 and md5 code originally came from the public domain utilities;
+I've only made light changes there, and let's call those public domain
+as well.
+
+Currently, everything else is licensed under the GPL, which can be
+found in COPYING.
+
+base/        Google "base" library. APACHE20 license.
+strings/     Google "strings" library. APACHE20 license.
+sdl/         Utilities for my habits in SDL. Includes bitmap font rendering.
+jdksmidi/    Baroque but thorough MIDI library, GPL.
+city/        The excellent CityHash hash algorithm.
+gtest/       Google testing library. New BSD license.
+
+wavesave      - Saves an array of audio samples as a WAV file. Limited input
+                formats, though it is not hard to add more.
+util          - General C++ utilities, accumulated throughout the ages. Some
+                are pretty embarrassing and should be cleaned up/out.
+heap          - Implementation of binary heaps.
+textsvg       - Pretty trivial support for generating SVG files manually.
+arcfour       - Implementation of the ARCFOUR (alleged RC4) algorithm, which
+                is a fast and simple cryptographic-ish random stream generator.
+timer         - Utterly trivial timer, in need of further development.
+randutil      - Random number utilities, using arcfour for random byte
+                generation.
+vector-util   - Some basic utilities on vectors that only depend on portable
+                stl.
+rle           - (Custom) run-length encoding and decoding.
+threadutil    - Utilities for threaded programming. These are mostly convenience
+                methods; if you want to do anything fancy you'll probably want
+                to be managing thread lifetimes yourself.
+interval-tree - Stores intervals on a 1D number line, with an efficient query
+                for intervals that contain a given point.
+color-util    - Does that one thing you always need to do: Convert HSV to RGB.
+lines         - Draw lines using Bresenham's algorithm.
+base64        - Very simple base64 encoding and decoding.
+md5           - Simple interface to MD5 hash algorithm. Note that MD5 should
+                no longer be considered safe for cryptography, so you should
+                probably avoid it for new applications.
