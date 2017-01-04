@@ -414,7 +414,7 @@ struct PlayFun {
 	  term.Output(line + "\n");
 
 	  // This thing prints.
-	  term.Advance();	
+	  term.Advance();
 	  TryImproveResponse res;
 	  DoTryImprove(req, &res);
 
@@ -599,7 +599,7 @@ struct PlayFun {
     }
 
     // XXX I think that some can produce more than iters outputs,
-    // so better could be greater than 100%. 
+    // so better could be greater than 100%.
     res->set_iters_tried(req.iters());
     res->set_iters_better(nimproved);
 
@@ -901,15 +901,15 @@ struct PlayFun {
       // static const int NUM_FAKE_FUTURES = 1;
       int total_future_length = 0;
       for (int i = 0; i < futures.size(); i++) {
-	total_future_length += futures[i].inputs.size();
+	    total_future_length += futures[i].inputs.size();
       }
 
       const int average_future_length = (int)((double)total_future_length /
 					      (double)futures.size());
-      
+
       Future fakefuture_hold;
       for (int z = 0; z < average_future_length; z++) {
-	fakefuture_hold.inputs.push_back(next.back());
+	    fakefuture_hold.inputs.push_back(next.back());
       }
       futures.push_back(fakefuture_hold);
     }
@@ -929,8 +929,8 @@ struct PlayFun {
       // stuck or whatever. So count both the positive and negative
       // components, plus the normalized integral.
       if (f < futures_orig.size()) {
-	(*futurescores)[f] += integral_score +
-	  positive_scores + negative_scores;
+	    (*futurescores)[f] += integral_score +
+	    positive_scores + negative_scores;
       }
 
       // TODO: I think maybe a better idea is to use the max over
@@ -955,9 +955,9 @@ struct PlayFun {
 
       // Unused except for diagnostics.
       if (future_score > *best_future_score)
-	*best_future_score = future_score;
+	    *best_future_score = future_score;
       if (future_score < *worst_future_score)
-	*worst_future_score = future_score;
+	    *worst_future_score = future_score;
     }
 
     // Discards the copy.
@@ -991,9 +991,9 @@ struct PlayFun {
       req->set_current_state(&((*current_state)[0]), current_state->size());
       req->set_next(&nexts[i][0], nexts[i].size());
       for (int f = 0; f < futures.size(); f++) {
-	FutureProto *fp = req->add_futures();
-	fp->set_inputs(&futures[f].inputs[0],
-		       futures[f].inputs.size());
+	    FutureProto *fp = req->add_futures();
+	    fp->set_inputs(&futures[f].inputs[0],
+		futures[f].inputs.size());
       }
       // if (!i) fprintf(stderr, "REQ: %s\n", req->DebugString().c_str());
     }
@@ -1007,8 +1007,8 @@ struct PlayFun {
     for (int i = 0; i < work.size(); i++) {
       const PlayFunResponse &res = work[i].res;
       for (int f = 0; f < res.futurescores_size(); f++) {
-	CHECK(f <= futuretotals->size());
-	(*futuretotals)[f] += res.futurescores(f);
+	    CHECK(f <= futuretotals->size());
+	    (*futuretotals)[f] += res.futurescores(f);
       }
 
       const double score = res.immediate_score() + res.futures_score();
@@ -1021,16 +1021,15 @@ struct PlayFun {
       distribution.norms.push_back(0);
 
       if (score > best_score) {
-	best_score = score;
-	*best_next_idx = i;
+	    best_score = score;
+	    *best_next_idx = i;
       }
     }
 
 #else
     // Local version.
     for (int i = 0; i < nexts.size(); i++) {
-      double immediate_score, best_future_score, worst_future_score,
-	futures_score;
+      double immediate_score, best_future_score, worst_future_score, futures_score;
       vector<double> futurescores(NFUTURES, 0.0);
       InnerLoop(nexts[i],
 		futures,
@@ -1042,7 +1041,7 @@ struct PlayFun {
 		&futurescores);
 
       for (int f = 0; f < futurescores.size(); f++) {
-	(*futuretotals)[f] += futurescores[f];
+	    (*futuretotals)[f] += futurescores[f];
       }
 
       double score = immediate_score + futures_score;
@@ -1055,8 +1054,8 @@ struct PlayFun {
       distribution.norms.push_back(0);
 
       if (score > best_score) {
-	best_score = score;
-	*best_next_idx = i;
+	    best_score = score;
+	    *best_next_idx = i;
       }
     }
 #endif
@@ -1072,7 +1071,7 @@ struct PlayFun {
     int num_currently_weighted = 0;
     for (int i = 0; i < futures->size(); i++) {
       if ((*futures)[i].weighted) {
-	num_currently_weighted++;
+	    num_currently_weighted++;
       }
     }
 
@@ -1086,34 +1085,30 @@ struct PlayFun {
       // resize the future if we drop it. Randomize between
       // MIN and MAX future lengths.
       int flength = MINFUTURELENGTH +
-	(int)
-	((double)(MAXFUTURELENGTH - MINFUTURELENGTH) *
-	 RandomDouble(&rc));
+          (int)((double)(MAXFUTURELENGTH - MINFUTURELENGTH) * RandomDouble(&rc));
 
       if (num_to_weight > 0) {
-	futures->push_back(Future(true, flength));
-	num_to_weight--;
+	    futures->push_back(Future(true, flength));
+	    num_to_weight--;
       } else {
-	futures->push_back(Future(false, flength));
+	    futures->push_back(Future(false, flength));
       }
     }
 
     // Make sure we have enough futures with enough data in.
     // PERF: Should avoid creating exact duplicate futures.
     for (int i = 0; i < NFUTURES; i++) {
-      while ((*futures)[i].inputs.size() <
-	     (*futures)[i].desired_length) {
-	const vector<uint8> &m =
-	  (*futures)[i].weighted ?
-	  motifs->RandomWeightedMotif() :
-	  motifs->RandomMotif();
-	for (int x = 0; x < m.size(); x++) {
-	  (*futures)[i].inputs.push_back(m[x]);
-	  if ((*futures)[i].inputs.size() ==
-	      (*futures)[i].desired_length) {
-	    break;
-	  }
-	}
+      while ((*futures)[i].inputs.size() < (*futures)[i].desired_length) {
+	    const vector<uint8> &m =
+	      (*futures)[i].weighted ?
+	      motifs->RandomWeightedMotif() :
+	      motifs->RandomMotif();
+	    for (int x = 0; x < m.size(); x++) {
+	      (*futures)[i].inputs.push_back(m[x]);
+	      if ((*futures)[i].inputs.size() == (*futures)[i].desired_length) {
+	        break;
+	      }
+	    }
       }
     }
 
@@ -1185,11 +1180,11 @@ struct PlayFun {
       // Chop the head off each future.
       const int choplength = nexts[best_next_idx].size();
       for (int i = 0; i < futures->size(); i++) {
-	vector<uint8> newf;
-	for (int j = choplength; j < (*futures)[i].inputs.size(); j++) {
-	  newf.push_back((*futures)[i].inputs[j]);
-	}
-	(*futures)[i].inputs.swap(newf);
+	    vector<uint8> newf;
+	    for (int j = choplength; j < (*futures)[i].inputs.size(); j++) {
+	      newf.push_back((*futures)[i].inputs[j]);
+	    }
+	    (*futures)[i].inputs.swap(newf);
       }
     }
 
@@ -1211,20 +1206,20 @@ struct PlayFun {
       double worst_total = futuretotals[0];
       int worst_idx = 0;
       for (int i = 1; i < futures->size(); i++) {
-	if (worst_total < futuretotals[i]) {
-	  worst_total = futuretotals[i];
-	  worst_idx = i;
-	}
+	    if (worst_total < futuretotals[i]) {
+	      worst_total = futuretotals[i];
+	      worst_idx = i;
+	    }
       }
 
       // Delete it by swapping.
       if (worst_idx != futures->size() - 1) {
-	(*futures)[worst_idx] = (*futures)[futures->size() - 1];
-	// Also swap in the futuretotals so the scores match.
-	// This was a bug before -- it always dropped the lowest
-	// scoring one and then the tail of the array (because this
-	// slot would still have the lowest score).
-	futuretotals[worst_idx] = futuretotals[futures->size() - 1];
+	    (*futures)[worst_idx] = (*futures)[futures->size() - 1];
+	    // Also swap in the futuretotals so the scores match.
+	    // This was a bug before -- it always dropped the lowest
+	    // scoring one and then the tail of the array (because this
+	    // slot would still have the lowest score).
+	    futuretotals[worst_idx] = futuretotals[futures->size() - 1];
       }
       futures->resize(futures->size() - 1);
     }
@@ -1235,8 +1230,8 @@ struct PlayFun {
     double best_future_score = futuretotals[0];
     for (int i = 1; i < futures->size(); i++) {
       if (futuretotals[i] > best_future_score) {
-	best_future_score = futuretotals[i];
-	best_future_idx = i;
+	    best_future_score = futuretotals[i];
+	    best_future_idx = i;
       }
     }
 
@@ -1268,21 +1263,21 @@ struct PlayFun {
       // Already checked it's a motif.
       CHECK(weight != NULL);
       if (newval > oldval) {
-	// Increases its weight.
-	double d = *weight / MOTIF_ALPHA;
-	if (d / total < MOTIF_MAX_FRAC) {
-	  *weight = d;
-	} else {
-	  fprintf(stderr, "motif is already at max frac: %.2f\n", d);
-	}
+	    // Increases its weight.
+	    double d = *weight / MOTIF_ALPHA;
+	    if (d / total < MOTIF_MAX_FRAC) {
+	      *weight = d;
+	    } else {
+	      fprintf(stderr, "motif is already at max frac: %.2f\n", d);
+	    }
       } else {
-	// Decreases its weight.
-	double d = *weight * MOTIF_ALPHA;
-	if (d / total > MOTIF_MIN_FRAC) {
-	  *weight = d;
-	} else {
-	  fprintf(stderr, "motif is already at min frac: %f\n", d);
-	}
+	    // Decreases its weight.
+	    double d = *weight * MOTIF_ALPHA;
+	    if (d / total > MOTIF_MIN_FRAC) {
+	      *weight = d;
+	    } else {
+	      fprintf(stderr, "motif is already at min frac: %f\n", d);
+	    }
       }
     }
 
@@ -1323,7 +1318,7 @@ struct PlayFun {
     }
 #endif
 
-    fprintf(stderr, "[MASTER] Beginning " 
+    fprintf(stderr, "[MASTER] Beginning "
 	    ANSI_YELLOW "%s" ANSI_RESET ".\n", game.c_str());
 
     // This version of the algorithm looks like this. At some point in
@@ -1360,19 +1355,19 @@ struct PlayFun {
 	      iters, movie.size(), rounds_until_backtrack);
 
       for (int i = 0, j = checkpoints.size() - 1; i < 3 && j >= 0; i++) {
-	fprintf(stderr, "%d, ", checkpoints[j].movenum);
-	j--;
+	    fprintf(stderr, "%d, ", checkpoints[j].movenum);
+	    j--;
       }
       fprintf(stderr, "...\n");
 
       MaybeBacktrack(iters, &rounds_until_backtrack, &futures);
 
       if (iters % 10 == 0) {
-	SaveMovie();
-	SaveQuickDiagnostics(futures);
-	if (iters % 50 == 0) {
-	  SaveDiagnostics(futures);
-	}
+  	    SaveMovie();
+  	    SaveQuickDiagnostics(futures);
+  	    if (iters % 50 == 0) {
+  	      SaveDiagnostics(futures);
+  	    }
       }
     }
   }
@@ -1388,11 +1383,11 @@ struct PlayFun {
     map< vector<uint8>, string > todo;
     for (int i = 0; i < futures.size(); i++) {
       if (futures[i].inputs.size() >= INPUTS_PER_NEXT) {
-	vector<uint8> nf(futures[i].inputs.begin(),
-			 futures[i].inputs.begin() + INPUTS_PER_NEXT);
-	if (todo.find(nf) == todo.end()) {
-	  todo.insert(make_pair(nf, StringPrintf("ftr-%d", i)));
-	}
+	    vector<uint8> nf(futures[i].inputs.begin(),
+			     futures[i].inputs.begin() + INPUTS_PER_NEXT);
+	    if (todo.find(nf) == todo.end()) {
+	      todo.insert(make_pair(nf, StringPrintf("ftr-%d", i)));
+	    }
       }
     }
 
@@ -1401,18 +1396,17 @@ struct PlayFun {
     while (todo.size() < NFUTURES) {
       const vector<uint8> *motif = motifs->RandomWeightedMotifNotIn(todo);
       if (motif == NULL) {
-	fprintf(stderr, "No more motifs (have %d todo).\n", todo.size());
-	break;
+	    fprintf(stderr, "No more motifs (have %d todo).\n", todo.size());
+	    break;
       }
-	
+
       todo.insert(make_pair(*motif, "backfill"));
     }
 
     // Now populate nexts and explanations.
     nexts->clear();
     nextplanations->clear();
-    for (map< vector<uint8>, string >::const_iterator it = todo.begin();
-	 it != todo.end(); ++it) {
+    for (map< vector<uint8>, string >::const_iterator it = todo.begin(); it != todo.end(); ++it) {
       nexts->push_back(it->first);
       nextplanations->push_back(it->second);
     }
@@ -1529,17 +1523,17 @@ struct PlayFun {
       const TryImproveResponse &res = work[i].res;
       CHECK(res.score_size() == res.inputs_size());
       for (int j = 0; j < res.inputs_size(); j++) {
-	Replacement r;
-	r.method =
-	  StringPrintf("%s-%d-%s",
-		       TryImproveRequest::Approach_Name(req.approach()).c_str(),
-		       req.iters(),
-		       req.seed().c_str());
-	ReadBytesFromProto(res.inputs(j), &r.inputs);
-	r.score = res.score(j);
-	replacements->push_back(r);
+	    Replacement r;
+	    r.method =
+	      StringPrintf("%s-%d-%s",
+		           TryImproveRequest::Approach_Name(req.approach()).c_str(),
+		           req.iters(),
+		           req.seed().c_str());
+	    ReadBytesFromProto(res.inputs(j), &r.inputs);
+	    r.score = res.score(j);
+	    replacements->push_back(r);
       }
-      
+
       fprintf(log, "<li>%s: %d/%d</li>\n",
 	      TryImproveRequest::Approach_Name(req.approach()).c_str(),
 	      res.iters_better(),
@@ -1567,8 +1561,8 @@ struct PlayFun {
   Checkpoint *GetRecentCheckpoint() {
     for (int i = checkpoints.size() - 1; i >= 0; i--) {
       if ((movie.size() - checkpoints[i].movenum) > MIN_BACKTRACK_DISTANCE &&
-	  checkpoints[i].movenum > watermark) {
-	return &checkpoints[i];
+	       checkpoints[i].movenum > watermark) {
+        return &checkpoints[i];
       }
     }
     return NULL;
@@ -1600,8 +1594,7 @@ struct PlayFun {
       fprintf(log,
 	      "<h2>Backtrack at iter %d, end frame %d, %s.</h2>\n",
 	      iters,
-	      
-	      movie.size(),
+        movie.size(),
 	      TimeString(start_time).c_str());
       fflush(log);
 
@@ -1626,8 +1619,8 @@ struct PlayFun {
       // Morally const, but need to load state from it.
       Checkpoint *start_ptr = GetRecentCheckpoint();
       if (start_ptr == NULL) {
-	fprintf(stderr, "No checkpoint to try backtracking.\n");
-	return;
+  	    fprintf(stderr, "No checkpoint to try backtracking.\n");
+  	    return;
       }
       // Copy, because stuff we do in here can resize the
       // checkpoints array and cause disappointment.
@@ -1639,7 +1632,7 @@ struct PlayFun {
       // Inputs to be improved.
       vector<uint8> improveme;
       for (int i = start.movenum; i < movie.size(); i++) {
-	improveme.push_back(movie[i]);
+	       improveme.push_back(movie[i]);
       }
 
       vector<uint8> current_state;
@@ -1647,23 +1640,23 @@ struct PlayFun {
       vector<Replacement> replacements;
       double improvability = 0.0;
       TryImprove(&start, improveme, current_state,
-		 &replacements, &improvability);
+		  &replacements, &improvability);
       if (replacements.empty()) {
-	fprintf(stderr,
-		ANSI_GREEN "There were no superior replacements."
-		ANSI_RESET "\n");
-	return;
+  	    fprintf(stderr,
+  		    ANSI_GREEN "There were no superior replacements."
+  		    ANSI_RESET "\n");
+  	    return;
       } else if (improvability < 0.05) {
-	fprintf(stderr,
-		"Improvability only " ANSI_GREEN "%.2f%% :)" ANSI_RESET "\n",
-		100.0 * improvability);
+  	    fprintf(stderr,
+  		    "Improvability only " ANSI_GREEN "%.2f%% :)" ANSI_RESET "\n",
+  		    100.0 * improvability);
       } else if (improvability > 0.30) {
-	fprintf(stderr,
-		"Improvability high at " ANSI_RED "%.2f%% :(" ANSI_RESET "\n",
-		100.0 * improvability);
+  	    fprintf(stderr,
+  		    "Improvability high at " ANSI_RED "%.2f%% :(" ANSI_RESET "\n",
+  		    100.0 * improvability);
       } else {
-	fprintf(stderr, "Improvability is " ANSI_CYAN "%.2f%%" ANSI_RESET "\n",
-		100.0 * improvability);
+  	    fprintf(stderr, "Improvability is " ANSI_CYAN "%.2f%%" ANSI_RESET "\n",
+  		    100.0 * improvability);
       }
 
       // Rather than trying to find the best immediate one (we might
@@ -1676,21 +1669,21 @@ struct PlayFun {
 	      nmoves);
 
       for (int i = 0; i < replacements.size(); i++) {
-	fprintf(log,
-		"<li>%d inputs via %s, %.2f</li>\n",
-		replacements[i].inputs.size(),
-		replacements[i].method.c_str(),
-		replacements[i].score);
+  	    fprintf(log,
+  		    "<li>%d inputs via %s, %.2f</li>\n",
+  		    replacements[i].inputs.size(),
+  		    replacements[i].method.c_str(),
+  		    replacements[i].score);
       }
       fflush(log);
 
       SimpleFM2::WriteInputsWithSubtitles(
-	  StringPrintf("%s-playfun-backtrack-%d-replaced.fm2", 
-		       game.c_str(), iters),
-	  game + ".nes",
-	  BASE64,
-	  movie,
-	  subtitles);
+	         StringPrintf("%s-playfun-backtrack-%d-replaced.fm2",
+      		      game.c_str(), iters),
+            	  game + ".nes",
+            	  BASE64,
+            	  movie,
+            	  subtitles);
       Rewind(start.movenum);
       Emulator::LoadUncompressed(&start.save);
 
@@ -1705,25 +1698,25 @@ struct PlayFun {
       trysplanations.push_back("original");
 
       for (int i = 0; i < replacements.size(); i++) {
-	// Currently ignores scores and methods. Make TakeBestAmong
-	// take annotated nexts so it can tell you which one it
-	// preferred. (Consider weights too..?)
-	if (tryme.find(replacements[i].inputs) == tryme.end()) {
-	  tryme.insert(replacements[i].inputs);
-	  tryvec.push_back(replacements[i].inputs);
-	  trysplanations.push_back(replacements[i].method);
-	}
+  	    // Currently ignores scores and methods. Make TakeBestAmong
+  	    // take annotated nexts so it can tell you which one it
+  	    // preferred. (Consider weights too..?)
+  	    if (tryme.find(replacements[i].inputs) == tryme.end()) {
+  	      tryme.insert(replacements[i].inputs);
+  	      tryvec.push_back(replacements[i].inputs);
+  	      trysplanations.push_back(replacements[i].method);
+  	    }
       }
 
       // vector< vector<uint8> > tryvec(tryme.begin(), tryme.end());
       if (tryvec.size() != replacements.size() + 1) {
-	fprintf(stderr, "... but there were %d duplicates (removed).\n",
-		(replacements.size() + 1) - tryvec.size());
-	fprintf(log, "<li><b>%d total but there were %d duplicates (removed)."
-		"</b></li>\n",
-		replacements.size() + 1,
-		(replacements.size() + 1) - tryvec.size());
-	fflush(log);
+  	    fprintf(stderr, "... but there were %d duplicates (removed).\n",
+  		    (replacements.size() + 1) - tryvec.size());
+  	    fprintf(log, "<li><b>%d total but there were %d duplicates (removed)."
+  		    "</b></li>\n",
+  		    replacements.size() + 1,
+  		    (replacements.size() + 1) - tryvec.size());
+  	    fflush(log);
       }
 
       // PERF could be passing along the end state for these, to
@@ -1734,12 +1727,12 @@ struct PlayFun {
 
       fprintf(stderr, "Write replacement movie.\n");
       SimpleFM2::WriteInputsWithSubtitles(
-	  StringPrintf("%s-playfun-backtrack-%d-replacement.fm2", 
-		       game.c_str(), iters),
-	  game + ".nes",
-	  BASE64,
-	  movie,
-	  subtitles);
+	        StringPrintf("%s-playfun-backtrack-%d-replacement.fm2",
+		      game.c_str(), iters),
+      	  game + ".nes",
+      	  BASE64,
+      	  movie,
+      	  subtitles);
 
       // What to do about futures? This is simplest, I guess...
       uint64 end_time = time(NULL);
@@ -1755,23 +1748,23 @@ struct PlayFun {
   }
 
   void SaveMovie() {
-    printf("                     - writing movie -\n");
+    fprintf(stderr, "                     - writing movie -\n");
     SimpleFM2::WriteInputsWithSubtitles(
         game + "-playfun-futures-progress.fm2",
-	game + ".nes",
-	BASE64,
-	movie,
-	subtitles);
+      	game + ".nes",
+      	BASE64,
+      	movie,
+      	subtitles);
     Emulator::PrintCacheStats();
   }
 
   void SaveQuickDiagnostics(const vector<Future> &futures) {
-    printf("                     - quick diagnostics -\n");
+    fprintf(stderr, "                     - quick diagnostics -\n");
     SaveFuturesHTML(futures, game + "-playfun-futures.html");
   }
 
   void SaveDiagnostics(const vector<Future> &futures) {
-    printf("                     - slow diagnostics -\n");
+    fprintf(stderr, "                     - slow diagnostics -\n");
     // This is now too expensive because the futures aren't cached
     // in this process.
     #if 0
@@ -1792,7 +1785,7 @@ struct PlayFun {
     SaveDistributionSVG(distributions, game + "-playfun-scores.svg");
     objectives->SaveSVG(memories, game + "-playfun-futures.svg");
     motifs->SaveHTML(game + "-playfun-motifs.html");
-    printf("                     (wrote)\n");
+    fprintf(stderr, "                     (wrote)\n");
   }
 
   // Ports for the helpers.
@@ -1831,8 +1824,8 @@ int main(int argc, char *argv[]) {
   if (argc >= 2) {
     if (0 == strcmp(argv[1], "--helper")) {
       if (argc < 3) {
-	fprintf(stderr, "Need one port number after --helper.\n");
-	abort();
+	    fprintf(stderr, "Need one port number after --helper.\n");
+	    abort();
       }
       int port = atoi(argv[2]);
       fprintf(stderr, "Starting helper on port %d...\n", port);
@@ -1841,13 +1834,13 @@ int main(int argc, char *argv[]) {
     } else if (0 == strcmp(argv[1], "--master")) {
       vector<int> helpers;
       for (int i = 2; i < argc; i++) {
-	int hp = atoi(argv[i]);
-	if (!hp) {
-	  fprintf(stderr,
-		  "Expected a series of helper ports after --master.\n");
-	  abort();
-	}
-	helpers.push_back(hp);
+	    int hp = atoi(argv[i]);
+	    if (!hp) {
+	      fprintf(stderr,
+		      "Expected a series of helper ports after --master.\n");
+	      abort();
+	    }
+	    helpers.push_back(hp);
       }
       pf.Master(helpers);
       fprintf(stderr, "master returned?\n");

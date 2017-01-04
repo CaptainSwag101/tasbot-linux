@@ -135,8 +135,7 @@ struct GetAnswers {
       }
       CHECK(low < high);
 
-      string meter =
-        StringPrintf("%c", (low == 0) ? '[' : '<');
+      string meter = StringPrintf("%c", (low == 0) ? '[' : '<');
       for (int i = low; i < high; i++) {
         if (done_[i]) {
           if (i < workdone_) {
@@ -162,11 +161,12 @@ struct GetAnswers {
           meter += ".";
         }
       }
-      meter += StringPrintf("%c\n", (high == work_.size()) ? ']' : '>');
+      meter += StringPrintf("%c\r", (high == work_.size()) ? ']' : '>');
       term.Output(meter);
 
       // Are we done?
       if (workdone_ == work_.size()) {
+        term.Output("\n");
         return;
       }
 
