@@ -2,19 +2,19 @@
 # Makefile made by tom7.
 # XXXX
 # sigbovik
-default: marionet.pb.cc marionet.pb.h playfun learnfun
-# tasbot
-# emu_test
+.PHONY: default all outdir clean veryclean cleantas
 
-all: learnfun playfun tasbot emu_test objective_test weighted-objectives_test pinviz sigbovik
+default: outdir marionet.pb.cc marionet.pb.h learnfun playfun
 
-# GPP=
+all: outdir marionet.pb.cc marionet.pb.h learnfun playfun tasbot emu_test objective_test weighted-objectives_test pinviz sigbovik
+
+OUTDIR=build
 
 # mlton executes this:
 # x86_64-w64-mingw32-gcc -std=gnu99 -c -Ic:\program files (x86)\mlton\lib\mlton\targets\x86_64-w64-mingw32\include -IC:/Program Files (x86)/MLton/lib/mlton/include -O1 -fno-common -fno-strict-aliasing -fomit-frame-pointer -w -m64 -o C:\Users\Tom\AppData\Local\Temp\file17jU3c.o x6502.c
 
 # -fno-strict-aliasing
-CXXFLAGS=-Wall -Wno-deprecated -Wno-sign-compare -I/usr/local/include 
+CXXFLAGS=-Wall -Wno-deprecated -Wno-sign-compare -I/usr/local/include
 OPT=-O2
 
 # for 64 bits on linux
@@ -112,47 +112,49 @@ LFLAGS= -m64 $(LINKPROTO) $(LINKNETWORKING) -lz $(OPT) $(FLTO) $(PROFILE)
 
 # LPNGFLAGS = -Llibpng -m64 -Wl,--subsystem,console $(LINKNETWORKING) -lpng16 -lz $(OPT) $(FLTO) $(PROFILE) -static
 
-learnfun : $(OBJECTS) learnfun.o
-	$(CXX) $^ -o $@ $(LFLAGS)
+learnfun: $(OBJECTS) learnfun.o
+	$(CXX) $^ -o $(OUTDIR)/$@ $(LFLAGS)
 
-playfun : $(OBJECTS) playfun.o
-	$(CXX) $^ -o $@ $(LFLAGS)
+playfun: $(OBJECTS) playfun.o
+	$(CXX) $^ -o $(OUTDIR)/$@ $(LFLAGS)
 
-# XXX never implemented scopefun.
-#showfun : $(OBJECTS) showfun.o
-#	$(CXX) $^ -o $@ $(LFLAGS)
+# XXX never implemented this.
+#showfun: outdir $(OBJECTS) showfun.o
+#	$(CXX) $^ -o $(OUTDIR)/$@ $(LFLAGS)
 
-tasbot : $(OBJECTS) tasbot.o
-	$(CXX) $^ -o $@ $(LFLAGS)
+tasbot: $(OBJECTS) tasbot.o
+	$(CXX) $^ -o $(OUTDIR)/$@ $(LFLAGS)
 
-scopefun : $(OBJECTS) $(PNGSAVE_OBJECTS) scopefun.o wave.o
-	$(CXX) $^ -o $@ $(LFLAGS)
+scopefun: $(OBJECTS) $(PNGSAVE_OBJECTS) scopefun.o wave.o
+	$(CXX) $^ -o $(OUTDIR)/$@ $(LFLAGS)
 
-pinviz : $(OBJECTS) $(PNGSAVE_OBJECTS) pinviz.o wave.o
-	$(CXX) $^ -o $@ $(LFLAGS)
+pinviz: $(OBJECTS) $(PNGSAVE_OBJECTS) pinviz.o wave.o
+	$(CXX) $^ -o $(OUTDIR)/$@ $(LFLAGS)
 
-emu_test : $(OBJECTS) emu_test.o
-	$(CXX) $^ -o $@ $(LFLAGS)
+emu_test: $(OBJECTS) emu_test.o
+	$(CXX) $^ -o $(OUTDIR)/$@ $(LFLAGS)
 
-objective_test : $(BASEOBJECTS) objective.o objective_test.o
-	$(CXX) $^ -o $@ $(LFLAGS)
+objective_test: $(BASEOBJECTS) objective.o objective_test.o
+	$(CXX) $^ -o $(OUTDIR)/$@ $(LFLAGS)
 
-sigbovik : $(OBJECTS) sigbovik.o $(SDLUTILOBJECTS)
-	$(CXX) $^ -o $@ $(LFLAGS)
+sigbovik: $(OBJECTS) sigbovik.o $(SDLUTILOBJECTS)
+	$(CXX) $^ -o $(OUTDIR)/$@ $(LFLAGS)
 
-weighted-objectives_test : $(BASEOBJECTS) weighted-objectives.o weighted-objectives_test.o util.o
-	$(CXX) $^ -o $@ $(LFLAGS)
+weighted-objectives_test: $(BASEOBJECTS) weighted-objectives.o weighted-objectives_test.o util.o
+	$(CXX) $^ -o $(OUTDIR)/$@ $(LFLAGS)
 
-test : emu_test objective_test weighted-objectives_test
+test: emu_test objective_test weighted-objectives_test
 	time ./emu_test
 	time ./objective_test
 	time ./weighted-objectives_test
 
-clean :
-	rm -f sigbovik learnfun playfun showfun pinviz tasbot emu_test objective_test weighted-objectives_test *.o $(EMUOBJECTS) $(CCLIBOBJECTS) gmon.out
+FORCE:
+	mkdir -p $(OUTDIR)
 
-veryclean : clean cleantas
+clean:
+	rm -f $(OUTDIR)/* *.o $(EMUOBJECTS) $(CCLIBOBJECTS) gmon.out
 
-cleantas :
+veryclean: clean cleantas
+
+cleantas:
 	rm -f prog*.fm2 deepest.fm2 heuristicest.fm2
-
