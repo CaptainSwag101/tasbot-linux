@@ -6,11 +6,11 @@ string SVGTickmarks(double width, double maxx, double span,
   bool longone = true;
   for (double x = 0.0; x < maxx; x += span) {
     double xf = x / maxx;
-    out += 
+    out +=
       StringPrintf("  <polyline fill=\"none\" opacity=\"0.5\""
 		   " stroke=\"#000000\""
 		   " stroke-width=\"1\" points=\"%f,0 %f,%f\" />\n",
-		   width * xf, width * xf, 
+		   width * xf, width * xf,
 		   longone ? tickheight * 2 : tickheight);
     if (longone)
       out += StringPrintf("<text x=\"%f\" y=\"%f\" font-size=\"%f\">"
@@ -26,7 +26,7 @@ string SVGTickmarks(double width, double maxx, double span,
 
 string DrawDots(int WIDTH, int HEIGHT,
 		const string &color, double xf,
-		const vector<double> &values, double maxval, 
+		const vector<double> &values, double maxval,
 		int chosen_idx) {
   // CHECK(colors.size() == values.size());
   vector<double> sorted = values;
@@ -34,7 +34,7 @@ string DrawDots(int WIDTH, int HEIGHT,
   string out;
   for (int i = 0; i < values.size(); i++) {
     int size = values.size();
-    int sorted_idx = 
+    int sorted_idx =
       lower_bound(sorted.begin(), sorted.end(), values[i]) - sorted.begin();
     double opacity = 1.0;
     if (sorted_idx < 0.1 * size || sorted_idx > 0.9 * size) {
@@ -49,7 +49,7 @@ string DrawDots(int WIDTH, int HEIGHT,
     out += StringPrintf("<circle cx=\"%s\" cy=\"%s\" r=\"%d\" "
 			"opacity=\"%.1f\" "
 			"fill=\"%s\" />",
-			Coord(xf * WIDTH).c_str(), 
+			Coord(xf * WIDTH).c_str(),
 			Coord(HEIGHT * (1.0 - (values[i] / maxval))).c_str(),
 			(i == chosen_idx) ? 10 : 4,
 			opacity,
@@ -70,7 +70,7 @@ void HSV(double h, double s, double v,
     // float chroma = v * s;
     // float hprime = h / 60.0;
     // int ihprime = hprime;
-    // float x = c * (1.0 - 
+    // float x = c * (1.0 -
 
     float hue = h / 60.0f;
     int fh = (int)hue;
@@ -95,7 +95,7 @@ void HSV(double h, double s, double v,
   }
 }
 
-InPlaceTerminal::InPlaceTerminal(int lines) 
+InPlaceTerminal::InPlaceTerminal(int lines)
   : lines(lines), last_was_output(false) {
   CHECK(lines > 0);
 }
@@ -103,7 +103,7 @@ InPlaceTerminal::InPlaceTerminal(int lines)
 void InPlaceTerminal::Output(const string &s) {
   if (last_was_output) {
     for (int i = 0; i < lines; i++) {
-      fprintf(stdout,
+      printf(
 	      // Cursor to beginning of previous line
 	      "\x1B[F"
 	      // Clear line
@@ -114,7 +114,7 @@ void InPlaceTerminal::Output(const string &s) {
 
   // Maybe cleaner to pad this to the length of the line
   // with spaces than to clear above.
-  fprintf(stderr, "%s", s.c_str());
+  printf("%s", s.c_str());
 
   last_was_output = true;
 }

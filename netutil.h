@@ -141,7 +141,7 @@ struct GetAnswers {
           if (i < workdone_) {
             meter += ANSI_GREY "#" ANSI_RESET;
           } else {
-            meter += "#";
+            meter += ANSI_WHITE "." ANSI_RESET;
           }
         } else if (i < workqueued_) {
           int helper = -1;
@@ -158,15 +158,14 @@ struct GetAnswers {
             "0123456789abcdefghijklmnopqrstuvwxyz"[helper] : '+';
           meter += StringPrintf(ANSI_CYAN "%c" ANSI_RESET, c);
         } else {
-          meter += ".";
+          meter += ANSI_WHITE "." ANSI_RESET;
         }
       }
-      meter += StringPrintf("%c\r", (high == work_.size()) ? ']' : '>');
+      meter += StringPrintf("%c\n", (high == work_.size()) ? ']' : '>');
       term.Output(meter);
 
       // Are we done?
       if (workdone_ == work_.size()) {
-        term.Output("\n");
         return;
       }
 
@@ -200,7 +199,7 @@ struct GetAnswers {
         int numready = SDLNet_CheckSockets(ss, 10000);
         if (numready == -1) {
           term.Advance();
-          fprintf(stderr, "SDLNet_CheckSockets: %s\n", SDLNet_GetError());
+          printf("SDLNet_CheckSockets: %s\n", SDLNet_GetError());
           perror("SDLNet_CheckSockets");
           abort();
         }
@@ -226,7 +225,7 @@ struct GetAnswers {
           if (ReadProto(helper->sock,
                         &work_[workidx].res)) {
             CHECK(done_[workidx] == false);
-            // fprintf(stderr, "Got result from port %d for work #%d\n",
+            // printf("Got result from port %d for work #%d\n",
             // helper->port,
             // workidx);
             done_[workidx] = true;
@@ -242,7 +241,7 @@ struct GetAnswers {
             helper->sock = NULL;
             helper->state = DISCONNECTED;
             term.Advance();
-            fprintf(stderr, "Error reading result from port %d "
+            printf("Error reading result from port %d "
                     "for work #%d!\n",
                     helper->port,
                     workidx);
@@ -301,7 +300,7 @@ struct GetAnswers {
     // PERF -- could parallelize this with other writes,
     // by waiting until the socket is actually ready.
     WriteProto(helper->sock, *work_[workidx].req);
-    // fprintf(stderr, "Doing work #%d on port %d.\n",
+    // printf("Doing work #%d on port %d.\n",
     // workidx,
     // helper->port);
   }
@@ -390,14 +389,14 @@ bool ReadProto(TCPsocket sock, T *t) {
   char header[4];
   int bytes = SDLNet_TCP_Recv(sock, (void *)&header, 4);
   if (4 != bytes) {
-    fprintf(stderr, "ReadProto: Failed to read length (got %d), err %d.\n",
+    printf("ReadProto: Failed to read length (got %d), err %d.\n",
             bytes, SDLNet_GetLastError());
     return false;
   }
 
   Uint32 len = SDLNet_Read32((void *)&header);
   if (len > MAX_MESSAGE) {
-    fprintf(stderr, "Peer sent header with len too big.\n");
+    printf("Peer sent header with len too big.\n");
     return false;
   }
   char *buffer = (char *)malloc(len);
@@ -406,7 +405,7 @@ bool ReadProto(TCPsocket sock, T *t) {
   // Drop-in replacement for SDLNet_TCP_Recv.
   int ret = sdlnet_recvall(sock, (void *)buffer, len);
   if (len != ret) {
-    fprintf(stderr, "ReadProto: Failed to read %d bytes (got %d), err %d\n",
+    printf("ReadProto: Failed to read %d bytes (got %d), err %d\n",
             len, ret, SDLNet_GetLastError());
     free(buffer);
     return false;
@@ -416,7 +415,7 @@ bool ReadProto(TCPsocket sock, T *t) {
     free(buffer);
     return true;
   } else {
-    fprintf(stderr, "ReadProto: Failed parse proto.\n");
+    printf("ReadProto: Failed parse proto.\n");
     free(buffer);
     return false;
   }
@@ -428,7 +427,7 @@ bool WriteProto(TCPsocket sock, const T &t) {
   // PERF probably possible without copy.
   string s = t.SerializeAsString();
   if (s.size() > MAX_MESSAGE) {
-    fprintf(stderr, "Tried to send message too long.");
+    printf("Tried to send message too long.");
     abort();
   }
   Uint32 len = s.size();
@@ -437,7 +436,7 @@ bool WriteProto(TCPsocket sock, const T &t) {
   SDLNet_Write32(len, (void*)header);
   int ret = SDLNet_TCP_Send(sock, (const void *)header, 4);
   if (4 != ret) {
-    fprintf(stderr, "Failed to send length (got %d) err %d.\n",
+    printf("Failed to send length (got %d) err %d.\n",
             ret, SDLNet_GetLastError());
     return false;
   }
@@ -454,7 +453,7 @@ bool SingleServer::WriteProto(const T &t) {
   CHECK(state_ == ACTIVE);
   bool r = ::WriteProto(peer_, t);
   if (!r) {
-    fprintf(stderr, "SingleServer failed writeproto.\n");
+    printf("SingleServer failed writeproto.\n");
     Hangup();
   }
   return r;
@@ -465,7 +464,7 @@ bool SingleServer::ReadProto(T *t) {
   CHECK(state_ == ACTIVE);
   bool r = ::ReadProto(peer_, t);
   if (!r) {
-    fprintf(stderr, "SingleServer failed readproto.\n");
+    printf("SingleServer failed readproto.\n");
     Hangup();
   }
   return r;

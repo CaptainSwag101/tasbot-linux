@@ -2,11 +2,11 @@
 # Makefile made by tom7.
 # XXXX
 # sigbovik
-default: marionet.pb.cc marionet.pb.h playfun learnfun scopefun
+default: marionet.pb.cc marionet.pb.h playfun learnfun
 # tasbot
 # emu_test
 
-all: playfun tasbot emu_test objective_test learnfun weighted-objectives_test pinviz sigbovik
+all: learnfun playfun tasbot emu_test objective_test weighted-objectives_test pinviz sigbovik
 
 # GPP=
 
@@ -15,7 +15,7 @@ all: playfun tasbot emu_test objective_test learnfun weighted-objectives_test pi
 
 # -fno-strict-aliasing
 CXXFLAGS=-Wall -Wno-deprecated -Wno-sign-compare -I/usr/local/include 
-OPT=-O
+OPT=-O2
 
 # for 64 bits on linux
 CXX=g++
@@ -54,7 +54,7 @@ PROFILE=
 INCLUDES=-I "cc-lib" -I "cc-lib/city"
 
 #  -DNOUNZIP
-CPPFLAGS= $(CCNETWORKING) -DPSS_STYLE=1 -DDUMMY_UI -DHAVE_ASPRINTF -Wno-write-strings -m64 $(OPT) -DHAVE_ALLOCA -DNOWINSTUFF $(INCLUDES) $(PROFILE) $(FLTO) --std=c++0x
+CPPFLAGS= $(CCNETWORKING) -DPSS_STYLE=1 -DDUMMY_UI -DHAVE_ASPRINTF -Wno-write-strings -m64 $(OPT) -DHAVE_ALLOCA -DNOWINSTUFF $(INCLUDES) $(PROFILE) $(FLTO) --std=c++11
 #  CPPFLAGS=-DPSS_STYLE=1 -DDUMMY_UI -DHAVE_ASPRINTF -Wno-write-strings -m64 -O -DHAVE_ALLOCA -DNOWINSTUFF $(PROFILE) -g
 
 CCLIBOBJECTS=cc-lib/util.o cc-lib/arcfour.o cc-lib/base/stringprintf.o cc-lib/city/city.o cc-lib/textsvg.o cc-lib/stb_image.o
@@ -105,7 +105,7 @@ OBJECTS=$(BASEOBJECTS) $(EMUOBJECTS) $(TASBOT_OBJECTS)
 	$(PROTOC) $< --cpp_out=.
 
 # without static, can't find lz or lstdcxx maybe?
-LFLAGS=  -m64 $(LINKPROTO) $(LINKNETWORKING) -lz $(OPT) $(FLTO) $(PROFILE)
+LFLAGS= -m64 $(LINKPROTO) $(LINKNETWORKING) -lz $(OPT) $(FLTO) $(PROFILE)
 # -Wl,--subsystem,console
 # -static -fwhole-program
 # -static
@@ -115,14 +115,14 @@ LFLAGS=  -m64 $(LINKPROTO) $(LINKNETWORKING) -lz $(OPT) $(FLTO) $(PROFILE)
 learnfun : $(OBJECTS) learnfun.o
 	$(CXX) $^ -o $@ $(LFLAGS)
 
-# XXX never implemented this.
-showfun : $(OBJECTS) showfun.o
+playfun : $(OBJECTS) playfun.o
 	$(CXX) $^ -o $@ $(LFLAGS)
+
+# XXX never implemented scopefun.
+#showfun : $(OBJECTS) showfun.o
+#	$(CXX) $^ -o $@ $(LFLAGS)
 
 tasbot : $(OBJECTS) tasbot.o
-	$(CXX) $^ -o $@ $(LFLAGS)
-
-playfun : $(OBJECTS) playfun.o
 	$(CXX) $^ -o $@ $(LFLAGS)
 
 scopefun : $(OBJECTS) $(PNGSAVE_OBJECTS) scopefun.o wave.o
