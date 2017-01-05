@@ -16,62 +16,58 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * 7-in-1  Darkwing Duck, Snake, MagicBlock (PCB marked as "12 in 1")
+ * 12-in-1 1991 New Star Co. Ltd.
+ *
  */
 
 #include "mapinc.h"
 
-static uint8 reg[4];
-static SFORMAT StateRegs[]=
+static uint8 prgchr[2], ctrl;
+static SFORMAT StateRegs[] =
 {
-  {reg, 4, "REGS"},
-  {0}
+	{ prgchr, 2, "REGS" },
+	{ &ctrl, 1, "CTRL" },
+	{ 0 }
 };
 
-static void Sync(void)
-{
-    uint8 bank = (reg[3]&3)<<3;
-    setchr4(0x0000, (reg[1]>>3)|(bank<<2));
-    setchr4(0x1000, (reg[2]>>3)|(bank<<2));
-    if(reg[3]&8)
-    {
-      setprg32(0x8000,((reg[2]&7)>>1)|bank);
-    }
-    else
-    {
-      setprg16(0x8000, (reg[1]&7)|bank);
-      setprg16(0xc000, 7|bank);
-    }
-    setmirror(((reg[3]&4)>>2)^1);
+static void Sync(void) {
+	uint8 bank = (ctrl & 3) << 3;
+	setchr4(0x0000, (prgchr[0] >> 3) | (bank << 2));
+	setchr4(0x1000, (prgchr[1] >> 3) | (bank << 2));
+	if (ctrl & 8) {
+		setprg16(0x8000, bank | (prgchr[0] & 6) | 0);   // actually, both 0 and 1 registers used, but they will switch each PA12 transition
+		setprg16(0xc000, bank | (prgchr[0] & 6) | 1);   // if bits are different for both registers, so they must be programmed strongly the same!
+	} else {
+		setprg16(0x8000, bank | (prgchr[0] & 7));
+		setprg16(0xc000, bank | 7 );
+	}
+	setmirror(((ctrl & 4) >> 2) ^ 1);
 }
 
-static DECLFW(BMC12IN1Write)
-{
-  switch(A)
-  {
-  case 0xafff: reg[0] = V; break;
-  case 0xbfff: reg[1] = V; break;
-  case 0xdfff: reg[2] = V; break;
-  case 0xefff: reg[3] = V; break;
-  }
-  Sync();
+static DECLFW(BMC12IN1Write) {
+	switch (A & 0xE000) {
+	case 0xA000: prgchr[0] = V; Sync(); break;
+	case 0xC000: prgchr[1] = V; Sync(); break;
+	case 0xE000: ctrl = V & 0x0F; Sync(); break;
+	}
 }
 
-static void BMC12IN1Power(void)
-{
-  reg[0]=reg[1]=reg[2]=reg[3]=0;
-  Sync();
-  SetReadHandler(0x8000,0xFFFF,CartBR);
-  SetWriteHandler(0x8000,0xFFFF,BMC12IN1Write);
+static void BMC12IN1Power(void) {
+	prgchr[0] = prgchr[1] = ctrl = 0;
+	Sync();
+	SetReadHandler(0x8000, 0xFFFF, CartBR);
+	SetWriteHandler(0x8000, 0xFFFF, BMC12IN1Write);
 }
 
-static void StateRestore(int version)
-{
-  Sync();
+static void StateRestore(int version) {
+	Sync();
 }
 
-void BMC12IN1_Init(CartInfo *info)
-{
-  info->Power=BMC12IN1Power;
-  GameStateRestore=StateRestore;
-  AddExState(&StateRegs, ~0, 0, 0);
+void BMC12IN1_Init(CartInfo *info) {
+	info->Power = BMC12IN1Power;
+	GameStateRestore = StateRestore;
+	AddExState(&StateRegs, ~0, 0, 0);
 }
+

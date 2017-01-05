@@ -24,14 +24,14 @@
 extern uint32 ROM_size;
 
 static uint8 prg[4], chr, sbw, we_sram;
-static uint8 *WRAM=NULL;
+static uint8 *WRAM = NULL;
 static uint32 WRAMSIZE;
 
 static SFORMAT StateRegs[]=
 {
   {prg, 4, "PRG"},
   {&chr, 1, "CHR"},
-	{&sbw, 1, "SBW"},
+  {&sbw, 1, "SBW"},
   {0}
 };
 
@@ -111,15 +111,16 @@ static DECLFW(M176Write_WriteSRAM)
 
 static void M176Power(void)
 {
-  SetReadHandler(0x6000,0x7fff,CartBR);
-  SetWriteHandler(0x6000,0x7fff,M176Write_WriteSRAM);
-  SetReadHandler(0x8000,0xFFFF,CartBR);
+	SetReadHandler(0x6000,0x7fff,CartBR);
+	SetWriteHandler(0x6000,0x7fff,M176Write_WriteSRAM);
+	SetReadHandler(0x8000,0xFFFF,CartBR);
 	SetWriteHandler(0xA001,0xA001,M176Write_A001);
 	SetWriteHandler(0x5001,0x5001,M176Write_5001);
 	SetWriteHandler(0x5010,0x5010,M176Write_5010);
 	SetWriteHandler(0x5011,0x5011,M176Write_5011);
-  SetWriteHandler(0x5ff1,0x5ff1,M176Write_5FF1);
-  SetWriteHandler(0x5ff2,0x5ff2,M176Write_5FF2);
+	SetWriteHandler(0x5ff1,0x5ff1,M176Write_5FF1);
+	SetWriteHandler(0x5ff2,0x5ff2,M176Write_5FF2);
+	FCEU_CheatAddRAM(WRAMSIZE >> 10, 0x6000, WRAM);
 
 	we_sram = 0;
 	sbw = 0;
@@ -135,7 +136,7 @@ static void M176Close(void)
 {
   if(WRAM)
     FCEU_gfree(WRAM);
-  WRAM=NULL;
+  WRAM = NULL;
 }
 
 static void StateRestore(int version)
