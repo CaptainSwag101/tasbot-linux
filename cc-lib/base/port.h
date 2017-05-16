@@ -960,11 +960,11 @@ extern inline void prefetch(const char *x) {}
 
   #define UNALIGNED_LOAD16(_p) (*reinterpret_cast<const uint16 *>(_p))
   #define UNALIGNED_LOAD32(_p) (*reinterpret_cast<const uint32 *>(_p))
-  #define UNALIGNED_LOAD64(_p) (*reinterpret_cast<const uint64 *>(_p))
+  #define UNALIGNED_LOAD64(_p) (*reinterpret_cast<const uint64_t *>(_p))
 
   #define UNALIGNED_STORE16(_p, _val) (*reinterpret_cast<uint16 *>(_p) = (_val))
   #define UNALIGNED_STORE32(_p, _val) (*reinterpret_cast<uint32 *>(_p) = (_val))
-  #define UNALIGNED_STORE64(_p, _val) (*reinterpret_cast<uint64 *>(_p) = (_val))
+  #define UNALIGNED_STORE64(_p, _val) (*reinterpret_cast<uint64_t *>(_p) = (_val))
 
 #else
 
@@ -985,8 +985,8 @@ extern inline void prefetch(const char *x) {}
     return t;
   }
 
-  inline uint64 UNALIGNED_LOAD64(const void *p) {
-    uint64 t;
+  inline uint64_t UNALIGNED_LOAD64(const void *p) {
+    uint64_t t;
     memcpy(&t, p, sizeof t);
     return t;
   }
@@ -999,7 +999,7 @@ extern inline void prefetch(const char *x) {}
     memcpy(p, &v, sizeof v);
   }
 
-  inline void UNALIGNED_STORE64(void *p, uint64 v) {
+  inline void UNALIGNED_STORE64(void *p, uint64_t v) {
     memcpy(p, &v, sizeof v);
   }
 

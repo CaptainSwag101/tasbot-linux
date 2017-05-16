@@ -9,15 +9,15 @@
 
 #include "tasbot.h"
 
-#include "fceu/utils/md5.h"
-#include "fceu/config.h"
-#include "fceu/driver.h"
-#include "fceu/drivers/common/args.h"
-#include "fceu/state.h"
+#include "fceu/src/utils/md5.h"
+#include "fceu/src/config.h"
+#include "fceu/src/driver.h"
+#include "fceu/src/drivers/common/args.h"
+#include "fceu/src/state.h"
 #include "basis-util.h"
 #include "emulator.h"
-#include "fceu/fceu.h"
-#include "fceu/types.h"
+#include "fceu/src/fceu.h"
+#include "fceu/src/types.h"
 #include "simplefm2.h"
 
 /* Represents a node in the state graph.

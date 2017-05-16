@@ -28,11 +28,6 @@ typedef signed char         schar;
 typedef signed char         int8;
 typedef short               int16;
 typedef int                 int32;
-#ifdef COMPILER_MSVC
-typedef __int64             int64;
-#else
-typedef int64_t           int64;
-#endif /* COMPILER_MSVC */
 
 // NOTE: unsigned types are DANGEROUS in loops and other arithmetical
 // places.  Use the signed types unless your variable represents a bit
@@ -43,11 +38,6 @@ typedef int64_t           int64;
 typedef unsigned char      uint8;
 typedef unsigned short     uint16;
 typedef unsigned int       uint32;
-#ifdef COMPILER_MSVC
-typedef unsigned __int64   uint64;
-#else
-typedef uint64_t uint64;
-#endif /* COMPILER_MSVC */
 
 // A type to represent a Unicode code-point value. As of Unicode 4.0,
 // such values require up to 21 bits.
@@ -82,7 +72,7 @@ typedef long sword_t;
 #define GG_LONGLONG(x) x##I64
 #define GG_ULONGLONG(x) x##UI64
 
-// Length modifier in printf format string for int64's (e.g. within %d)
+// Length modifier in printf format string for int64_t's (e.g. within %d)
 #define GG_LL_FORMAT "I64"  // As in printf("%I64d", ...)
 #define GG_LL_FORMAT_W L"I64"
 
@@ -98,15 +88,15 @@ typedef long sword_t;
 static const uint8  kuint8max  = (( uint8) 0xFF);
 static const uint16 kuint16max = ((uint16) 0xFFFF);
 static const uint32 kuint32max = ((uint32) 0xFFFFFFFF);
-static const uint64 kuint64max = ((uint64) GG_LONGLONG(0xFFFFFFFFFFFFFFFF));
+static const uint64_t kuint64max = ((uint64_t) GG_LONGLONG(0xFFFFFFFFFFFFFFFF));
 static const  int8  kint8min   = ((  int8) 0x80);
 static const  int8  kint8max   = ((  int8) 0x7F);
 static const  int16 kint16min  = (( int16) 0x8000);
 static const  int16 kint16max  = (( int16) 0x7FFF);
 static const  int32 kint32min  = (( int32) 0x80000000);
 static const  int32 kint32max  = (( int32) 0x7FFFFFFF);
-static const  int64 kint64min  = (( int64) GG_LONGLONG(0x8000000000000000));
-static const  int64 kint64max  = (( int64) GG_LONGLONG(0x7FFFFFFFFFFFFFFF));
+static const  int64_t kint64min  = (( int64_t) GG_LONGLONG(0x8000000000000000));
+static const  int64_t kint64max  = (( int64_t) GG_LONGLONG(0x7FFFFFFFFFFFFFFF));
 
 
 #endif  // BASE_INT_TYPES_H_

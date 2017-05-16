@@ -29,3 +29,7 @@
 
 # Build directory
 build/
+
+fceu/\.sconf_temp/
+
+*.dblite

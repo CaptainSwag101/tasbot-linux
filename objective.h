@@ -59,7 +59,7 @@
 
 #include <vector>
 
-#include "fceu/types.h"
+#include "fceu/src/types.h"
 
 using namespace std;
 

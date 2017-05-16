@@ -7,13 +7,13 @@
 #include <zlib.h>
 #include <unordered_map>
 
-#include "fceu/driver.h"
-#include "fceu/fceu.h"
-#include "fceu/types.h"
-#include "fceu/utils/md5.h"
-#include "fceu/version.h"
-#include "fceu/state.h"
-#include "fceu/sound.h"
+#include "fceu/src/driver.h"
+#include "fceu/src/fceu.h"
+#include "fceu/src/types.h"
+#include "fceu/src/utils/md5.h"
+#include "fceu/src/version.h"
+#include "fceu/src/state.h"
+#include "fceu/src/sound.h"
 
 #include "tasbot.h"
 #include "cc-lib/city/city.h"

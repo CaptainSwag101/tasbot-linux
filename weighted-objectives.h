@@ -10,7 +10,7 @@
 #include <utility>
 
 #include "tasbot.h"
-#include "fceu/types.h"
+#include "fceu/src/types.h"
 
 struct WeightedObjectives {
   explicit WeightedObjectives(const std::vector< vector<int> > &objs);
