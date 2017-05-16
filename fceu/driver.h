@@ -1,13 +1,13 @@
 #ifndef __DRIVER_H_
 #define __DRIVER_H_
 
-#include <stdio.h>
-#include <string>
-#include <iosfwd>
-
 #include "types.h"
 #include "git.h"
 #include "file.h"
+
+#include <cstdio>
+#include <cstring>
+#include <iosfwd>
 
 FILE *FCEUD_UTF8fopen(const char *fn, const char *mode);
 inline FILE *FCEUD_UTF8fopen(const std::string &n, const char *mode) { return FCEUD_UTF8fopen(n.c_str(),mode); }
@@ -68,7 +68,7 @@ void FCEUI_NTSCSELTINT(void);
 void FCEUI_NTSCDEC(void);
 void FCEUI_NTSCINC(void);
 void FCEUI_GetNTSCTH(int *tint, int *hue);
-void FCEUI_SetNTSCTH(int n, int tint, int hue);
+void FCEUI_SetNTSCTH(bool en, int tint, int hue);
 
 void FCEUI_SetInput(int port, ESI type, void *ptr, int attrib);
 void FCEUI_SetInputFC(ESIFC type, void *ptr, int attrib);
@@ -96,11 +96,11 @@ void FCEUI_SetRenderPlanes(bool sprites, bool bg);
 void FCEUI_GetRenderPlanes(bool& sprites, bool& bg);
 
 //name=path and file to load.  returns null if it failed
-FCEUGI *FCEUI_LoadGame(const char *name, int OverwriteVidMode);
+FCEUGI *FCEUI_LoadGame(const char *name, int OverwriteVidMode, bool silent = false);
 
 //same as FCEUI_LoadGame, except that it can load from a tempfile.
 //name is the logical path to open; archiveFilename is the archive which contains name
-FCEUGI *FCEUI_LoadGameVirtual(const char *name, int OverwriteVidMode);
+FCEUGI *FCEUI_LoadGameVirtual(const char *name, int OverwriteVidMode, bool silent = false);
 
 //general purpose emulator initialization. returns true if successful
 bool FCEUI_Initialize();
@@ -120,6 +120,10 @@ void FCEUI_SetGameGenie(bool a);
 //Set video system a=0 NTSC, a=1 PAL
 void FCEUI_SetVidSystem(int a);
 
+//Set variables for NTSC(0) / PAL(1) / Dendy(2)
+//Dendy has PAL framerate and resolution, but ~NTSC timings, and has 50 dummy scanlines to force 50 fps
+void FCEUI_SetRegion(int region);
+
 //Convenience function; returns currently emulated video system(0=NTSC, 1=PAL).
 int FCEUI_GetCurrentVidSystem(int *slstart, int *slend);
 
@@ -137,9 +141,7 @@ void FCEUI_SetRenderedLines(int ntscf, int ntscl, int palf, int pall);
 //Sets the base directory(save states, snapshots, etc. are saved in directories below this directory.
 void FCEUI_SetBaseDirectory(std::string const & dir);
 
-//Tells FCE Ultra to copy the palette data pointed to by pal and use it.
-//Data pointed to by pal needs to be 64*3 bytes in length.
-void FCEUI_SetPaletteArray(uint8 *pal);
+void FCEUI_SetUserPalette(uint8 *pal, int nEntries);
 
 //Sets up sound code to render sound at the specified rate, in samples
 //per second.  Only sample rates of 44100, 48000, and 96000 are currently supported.
@@ -161,8 +163,8 @@ int FCEUI_SelectState(int, int);
 extern void FCEUI_SelectStateNext(int);
 
 //"fname" overrides the default save state filename code if non-NULL.
-void FCEUI_SaveState(const char *fname);
-void FCEUI_LoadState(const char *fname);
+void FCEUI_SaveState(const char *fname, bool display_message=true);
+void FCEUI_LoadState(const char *fname, bool display_message=true);
 
 void FCEUD_SaveStateAs(void);
 void FCEUD_LoadStateFrom(void);
@@ -202,25 +204,26 @@ void FCEUI_CheatSearchShowExcluded(void);
 void FCEUI_CheatSearchSetCurrentAsOriginal(void);
 
 //.rom
-#define FCEUIOD_ROMS    0       //Roms
-#define FCEUIOD_NV      1       //NV = nonvolatile. save data.
-#define FCEUIOD_STATES  2       //savestates
-#define FCEUIOD_FDSROM  3       //disksys.rom
-#define FCEUIOD_SNAPS   4       //screenshots
-#define FCEUIOD_CHEATS  5       //cheats
-#define FCEUIOD_MOVIES  6       //.fm2 files
-#define FCEUIOD_MEMW    7       //memory watch fiels
-#define FCEUIOD_BBOT    8       //basicbot, obsolete
-#define FCEUIOD_MACRO   9       //macro files - old TASEdit v0.1 paradigm, not implemented, probably obsolete
-#define FCEUIOD_INPUT   10      //input presets
-#define FCEUIOD_LUA     11      //lua scripts
-#define FCEUIOD_AVI             12      //default file for avi output
-#define FCEUIOD__COUNT  13      //base directory override?
+#define FCEUIOD_ROMS    0	//Roms
+#define FCEUIOD_NV      1	//NV = nonvolatile. save data.
+#define FCEUIOD_STATES  2	//savestates
+#define FCEUIOD_FDSROM  3	//disksys.rom
+#define FCEUIOD_SNAPS   4	//screenshots
+#define FCEUIOD_CHEATS  5	//cheats
+#define FCEUIOD_MOVIES  6	//.fm2 files
+#define FCEUIOD_MEMW    7	//memory watch fiels
+#define FCEUIOD_BBOT    8	//basicbot, obsolete
+#define FCEUIOD_MACRO   9	//macro files - old TASEdit v0.1 paradigm, not implemented, probably obsolete
+#define FCEUIOD_INPUT   10	//input presets
+#define FCEUIOD_LUA     11	//lua scripts
+#define FCEUIOD_AVI		12	//default file for avi output
+#define FCEUIOD__COUNT  13	//base directory override?
 
 void FCEUI_SetDirOverride(int which, char *n);
 
 void FCEUI_MemDump(uint16 a, int32 len, void (*callb)(uint16 a, uint8 v));
-
+uint8 FCEUI_MemSafePeek(uint16 A);
+void FCEUI_MemPoke(uint16 a, uint8 v, int hl);
 void FCEUI_NMI(void);
 void FCEUI_IRQ(void);
 uint16 FCEUI_Disassemble(void *XA, uint16 a, char *stringo);
@@ -228,7 +231,6 @@ void FCEUI_GetIVectors(uint16 *reset, uint16 *irq, uint16 *nmi);
 
 uint32 FCEUI_CRC32(uint32 crc, uint8 *buf, uint32 len);
 
-void FCEUI_ToggleTileView(void);
 void FCEUI_SetLowPass(int q);
 
 void FCEUI_NSFSetVis(int mode);
@@ -290,11 +292,11 @@ void FCEUI_HandleEmuCommands(TestCommandState* testfn);
 //Emulation speed
 enum EMUSPEED_SET
 {
-        EMUSPEED_SLOWEST=0,
-        EMUSPEED_SLOWER,
-        EMUSPEED_NORMAL,
-        EMUSPEED_FASTER,
-        EMUSPEED_FASTEST
+	EMUSPEED_SLOWEST=0,
+	EMUSPEED_SLOWER,
+	EMUSPEED_NORMAL,
+	EMUSPEED_FASTER,
+	EMUSPEED_FASTEST
 };
 void FCEUD_SetEmulationSpeed(int cmd);
 void FCEUD_TurboOn(void);
@@ -330,12 +332,12 @@ void FCEUD_VideoChanged();
 
 enum EFCEUI
 {
-        FCEUI_STOPAVI, FCEUI_QUICKSAVE, FCEUI_QUICKLOAD, FCEUI_SAVESTATE, FCEUI_LOADSTATE,
-        FCEUI_NEXTSAVESTATE,FCEUI_PREVIOUSSAVESTATE,FCEUI_VIEWSLOTS,
-        FCEUI_STOPMOVIE, FCEUI_RECORDMOVIE, FCEUI_PLAYMOVIE,
-        FCEUI_OPENGAME, FCEUI_CLOSEGAME,
-        FCEUI_TASEDITOR,
-        FCEUI_RESET, FCEUI_POWER, FCEUI_PLAYFROMBEGINNING, FCEUI_EJECT_DISK, FCEUI_SWITCH_DISK
+	FCEUI_STOPAVI, FCEUI_QUICKSAVE, FCEUI_QUICKLOAD, FCEUI_SAVESTATE, FCEUI_LOADSTATE,
+	FCEUI_NEXTSAVESTATE,FCEUI_PREVIOUSSAVESTATE,FCEUI_VIEWSLOTS,
+	FCEUI_STOPMOVIE, FCEUI_RECORDMOVIE, FCEUI_PLAYMOVIE,
+	FCEUI_OPENGAME, FCEUI_CLOSEGAME,
+	FCEUI_TASEDITOR,
+	FCEUI_RESET, FCEUI_POWER, FCEUI_PLAYFROMBEGINNING, FCEUI_EJECT_DISK, FCEUI_SWITCH_DISK, FCEUI_INSERT_COIN
 };
 
 //checks whether an EFCEUI is valid right now

@@ -77,24 +77,24 @@ typedef uint32_t uint32;
 #endif
 
 #ifdef __GNUC__
-typedef uint64_t uint64;
-typedef uint64 u64;
-typedef int64_t int64;
-#define INLINE inline
-#define GINLINE inline
+ typedef unsigned long long uint64;
+ typedef uint64 u64;
+ typedef long long int64;
+ #define INLINE inline
+ #define GINLINE inline
 #elif MSVC
-typedef __int64 int64;
-typedef unsigned __int64 uint64;
-#define __restrict__
-#define INLINE __inline
-#define GINLINE			/* Can't declare a function INLINE
+ typedef __int64 int64;
+ typedef unsigned __int64 uint64;
+ #define __restrict__
+ #define INLINE __inline
+ #define GINLINE			/* Can't declare a function INLINE
 					   and global in MSVC.  Bummer.
 					*/
-#define PSS_STYLE 2			/* Does MSVC compile for anything
+ #define PSS_STYLE 2			/* Does MSVC compile for anything
 					   other than Windows/DOS targets?
 					*/
 
-#if _MSC_VER >= 1300
+ #if _MSC_VER >= 1300
   #pragma warning(disable:4244) //warning C4244: '=' : conversion from 'uint32' to 'uint8', possible loss of data
   #pragma warning(disable:4996) //'strdup' was declared deprecated
 #endif

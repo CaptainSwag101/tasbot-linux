@@ -1,12 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "types.h"
 #include "fceu.h"
 
 #include "driver.h"
 #include "sound.h"
 #include "wave.h"
+
+#include <cstdio>
+#include <cstdlib>
 
 static FILE *soundlog=0;
 static long wsize;
@@ -24,7 +24,7 @@ void FCEU_WriteWaveData(int32 *Buffer, int Count)
  int16 *dest;
  int x;
 
-#if !defined(WIN32) || defined(NOWINSTUFF)
+#ifndef WIN32
  if(!soundlog) return;
 #else
  if(!soundlog && !FCEUI_AviIsRecording()) return;
@@ -47,12 +47,10 @@ void FCEU_WriteWaveData(int32 *Buffer, int Count)
 	 wsize+=fwrite(temp,1,Count*sizeof(int16),soundlog);
 
 	#ifdef WIN32
-        #ifndef NOWINSTUFF
 	if(FCEUI_AviIsRecording())
 	{
 		FCEUI_AviSoundUpdate((void*)temp, Count);
 	}
-        #endif
 	#endif
 }
 

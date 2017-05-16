@@ -18,7 +18,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#include <string.h>
 #include "types.h"
 #include "x6502.h"
 #include "fceu.h"
@@ -29,16 +28,20 @@
 #endif
 
 #include "x6502abbrev.h"
+
+#include <cstring>
 X6502 X;
 uint32 timestamp;
+uint32 soundtimestamp;
 void (*MapIRQHook)(int a);
 
 #define ADDCYC(x) \
-{     \
+{                 \
  int __x=x;       \
  _tcount+=__x;    \
  _count-=__x*48;  \
  timestamp+=__x;  \
+ if(!overclocking) soundtimestamp+=__x; \
 }
 
 //normal memory read
@@ -407,7 +410,7 @@ void X6502_Power(void)
 {
  _count=_tcount=_IRQlow=_PC=_A=_X=_Y=_P=_PI=_DB=_jammed=0;
  _S=0xFD;
- timestamp=0;
+ timestamp=soundtimestamp=0;
  X6502_Reset();
 }
 
@@ -482,6 +485,8 @@ extern int test; test++;
 	//will probably cause a major speed decrease on low-end systems
    DEBUG( DebugCycle() );
 
+   IncrementInstructionsCounters();
+
    _PI=_P;
    b1=RdMem(_PC);
 
@@ -490,7 +495,9 @@ extern int test; test++;
    temp=_tcount;
    _tcount=0;
    if(MapIRQHook) MapIRQHook(temp);
-   FCEU_SoundCPUHook(temp);
+   
+   if (!overclocking)
+    FCEU_SoundCPUHook(temp);
    #ifdef _S9XLUA_H
    CallRegisteredLuaMemHook(_PC, 1, 0, LUAMEMHOOK_EXEC);
    #endif
@@ -529,7 +536,12 @@ void FCEUI_GetIVectors(uint16 *reset, uint16 *irq, uint16 *nmi)
 
 //the opsize table is used to quickly grab the instruction sizes (in bytes)
 const uint8 opsize[256] = {
-/*0x00*/	1,2,0,0,0,2,2,0,1,2,1,0,0,3,3,0,
+#ifdef BRK_3BYTE_HACK
+/*0x00*/	3, //BRK
+#else
+/*0x00*/	1, //BRK
+#endif
+/*0x01*/    2,0,0,0,2,2,0,1,2,1,0,0,3,3,0,
 /*0x10*/	2,2,0,0,0,2,2,0,1,3,0,0,0,3,3,0,
 /*0x20*/	3,2,0,0,2,2,2,0,1,2,1,0,3,3,3,0,
 /*0x30*/	2,2,0,0,0,2,2,0,1,3,0,0,0,3,3,0,

@@ -1,11 +1,16 @@
 #ifndef _INPUT_H_
 #define _INPUT_H_
 
-#include <ostream>
 
 #include "git.h"
 
+#include <ostream>
+
 void LagCounterToggle(void);
+
+extern FILE* PlayInputFile;
+extern FILE* DumpInputFile;
+
 
 class MovieRecord;
 
@@ -241,6 +246,7 @@ enum EMUCMD
 	//-----------------------------
 	//keep adding these in order of newness or else the hotkey binding configs will get messed up...
 	EMUCMD_FPS_DISPLAY_TOGGLE,
+	EMUCMD_TOOL_DEBUGSTEPINTO,
 
 	EMUCMD_MAX
 };
