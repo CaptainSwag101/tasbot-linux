@@ -161,8 +161,8 @@ struct GetAnswers {
           meter += ANSI_WHITE "." ANSI_RESET;
         }
       }
-      meter += StringPrintf("%c\n", (high == work_.size()) ? ']' : '>');
-      term.Output(meter);
+      meter += StringPrintf("%c", (high == work_.size()) ? ']' : '>');
+      term.Output(meter + "\n");
 
       // Are we done?
       if (workdone_ == work_.size()) {

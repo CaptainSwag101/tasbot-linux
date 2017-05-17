@@ -15,7 +15,7 @@ OUTDIR=build
 
 # -fno-strict-aliasing
 CXXFLAGS=-Wall -Wno-deprecated -Wno-sign-compare -I/usr/local/include
-OPT=-O2
+OPT=-g -O3
 
 # for 64 bits on linux
 CXX=g++

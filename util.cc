@@ -105,7 +105,8 @@ void InPlaceTerminal::Output(const string &s) {
     for (int i = 0; i < lines; i++) {
       printf(
 	      // Cursor to beginning of previous line
-	      "\x1B[F"
+          "\r"
+	      "\x1B[1A"
 	      // Clear line
 	      "\x1B[2K"
 	      );

@@ -29,7 +29,7 @@ TCPsocket ConnectLocal(int port) {
 
   tcpsock = SDLNet_TCP_Open(&ip);
   if (!tcpsock) {
-    fprintf(stderr, "SDLNet_TCP_Open(%s): %s\n", 
+    fprintf(stderr, "SDLNet_TCP_Open(%s): %s\n",
 	    IPString(ip).c_str(),
 	    SDLNet_GetError());
     abort();

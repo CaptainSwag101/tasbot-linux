@@ -16,264 +16,257 @@
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
+class MarkovInputDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<MarkovInput> {
+} _MarkovInput_default_instance_;
+class FutureProtoDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<FutureProto> {
+} _FutureProto_default_instance_;
+class PlayFunRequestDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<PlayFunRequest> {
+} _PlayFunRequest_default_instance_;
+class PlayFunResponseDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<PlayFunResponse> {
+} _PlayFunResponse_default_instance_;
+class TryImproveRequestDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<TryImproveRequest> {
+} _TryImproveRequest_default_instance_;
+class TryImproveResponseDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<TryImproveResponse> {
+} _TryImproveResponse_default_instance_;
+class HelperRequestDefaultTypeInternal : public ::google::protobuf::internal::ExplicitlyConstructed<HelperRequest> {
+} _HelperRequest_default_instance_;
+
+namespace protobuf_marionet_2eproto {
+
 
 namespace {
 
-const ::google::protobuf::Descriptor* MarkovInput_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  MarkovInput_reflection_ = NULL;
-const ::google::protobuf::Descriptor* FutureProto_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  FutureProto_reflection_ = NULL;
-const ::google::protobuf::Descriptor* PlayFunRequest_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  PlayFunRequest_reflection_ = NULL;
-const ::google::protobuf::Descriptor* PlayFunResponse_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  PlayFunResponse_reflection_ = NULL;
-const ::google::protobuf::Descriptor* TryImproveRequest_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  TryImproveRequest_reflection_ = NULL;
-const ::google::protobuf::EnumDescriptor* TryImproveRequest_Approach_descriptor_ = NULL;
-const ::google::protobuf::Descriptor* TryImproveResponse_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  TryImproveResponse_reflection_ = NULL;
-const ::google::protobuf::Descriptor* HelperRequest_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  HelperRequest_reflection_ = NULL;
+::google::protobuf::Metadata file_level_metadata[7];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 }  // namespace
 
+const ::google::protobuf::uint32 TableStruct::offsets[] = {
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MarkovInput, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MarkovInput, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FutureProto, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FutureProto, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FutureProto, inputs_),
+  0,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunRequest, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunRequest, current_state_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunRequest, next_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunRequest, futures_),
+  0,
+  1,
+  ~0u,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, immediate_score_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, best_future_score_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, worst_future_score_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, futures_score_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, futurescores_),
+  0,
+  1,
+  2,
+  3,
+  ~0u,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, start_state_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, improveme_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, end_state_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, end_integral_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, approach_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, seed_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, iters_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, maxbest_),
+  0,
+  1,
+  2,
+  4,
+  5,
+  3,
+  6,
+  7,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, inputs_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, score_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, iters_tried_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, iters_better_),
+  ~0u,
+  ~0u,
+  0,
+  1,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HelperRequest, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HelperRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HelperRequest, playfun_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HelperRequest, tryimprove_),
+  0,
+  1,
+};
 
-void protobuf_AssignDesc_marionet_2eproto() GOOGLE_ATTRIBUTE_COLD;
-void protobuf_AssignDesc_marionet_2eproto() {
-  protobuf_AddDesc_marionet_2eproto();
-  const ::google::protobuf::FileDescriptor* file =
-    ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
-      "marionet.proto");
-  GOOGLE_CHECK(file != NULL);
-  MarkovInput_descriptor_ = file->message_type(0);
-  static const int MarkovInput_offsets_[1] = {
-  };
-  MarkovInput_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      MarkovInput_descriptor_,
-      MarkovInput::default_instance_,
-      MarkovInput_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MarkovInput, _has_bits_[0]),
-      -1,
-      -1,
-      sizeof(MarkovInput),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MarkovInput, _internal_metadata_),
-      -1);
-  FutureProto_descriptor_ = file->message_type(1);
-  static const int FutureProto_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FutureProto, inputs_),
-  };
-  FutureProto_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      FutureProto_descriptor_,
-      FutureProto::default_instance_,
-      FutureProto_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FutureProto, _has_bits_[0]),
-      -1,
-      -1,
-      sizeof(FutureProto),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FutureProto, _internal_metadata_),
-      -1);
-  PlayFunRequest_descriptor_ = file->message_type(2);
-  static const int PlayFunRequest_offsets_[3] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunRequest, current_state_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunRequest, next_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunRequest, futures_),
-  };
-  PlayFunRequest_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      PlayFunRequest_descriptor_,
-      PlayFunRequest::default_instance_,
-      PlayFunRequest_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunRequest, _has_bits_[0]),
-      -1,
-      -1,
-      sizeof(PlayFunRequest),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunRequest, _internal_metadata_),
-      -1);
-  PlayFunResponse_descriptor_ = file->message_type(3);
-  static const int PlayFunResponse_offsets_[5] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, immediate_score_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, best_future_score_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, worst_future_score_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, futures_score_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, futurescores_),
-  };
-  PlayFunResponse_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      PlayFunResponse_descriptor_,
-      PlayFunResponse::default_instance_,
-      PlayFunResponse_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, _has_bits_[0]),
-      -1,
-      -1,
-      sizeof(PlayFunResponse),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PlayFunResponse, _internal_metadata_),
-      -1);
-  TryImproveRequest_descriptor_ = file->message_type(4);
-  static const int TryImproveRequest_offsets_[8] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, start_state_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, improveme_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, end_state_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, end_integral_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, approach_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, seed_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, iters_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, maxbest_),
-  };
-  TryImproveRequest_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      TryImproveRequest_descriptor_,
-      TryImproveRequest::default_instance_,
-      TryImproveRequest_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, _has_bits_[0]),
-      -1,
-      -1,
-      sizeof(TryImproveRequest),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveRequest, _internal_metadata_),
-      -1);
-  TryImproveRequest_Approach_descriptor_ = TryImproveRequest_descriptor_->enum_type(0);
-  TryImproveResponse_descriptor_ = file->message_type(5);
-  static const int TryImproveResponse_offsets_[4] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, inputs_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, score_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, iters_tried_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, iters_better_),
-  };
-  TryImproveResponse_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      TryImproveResponse_descriptor_,
-      TryImproveResponse::default_instance_,
-      TryImproveResponse_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, _has_bits_[0]),
-      -1,
-      -1,
-      sizeof(TryImproveResponse),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TryImproveResponse, _internal_metadata_),
-      -1);
-  HelperRequest_descriptor_ = file->message_type(6);
-  static const int HelperRequest_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HelperRequest, playfun_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HelperRequest, tryimprove_),
-  };
-  HelperRequest_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      HelperRequest_descriptor_,
-      HelperRequest::default_instance_,
-      HelperRequest_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HelperRequest, _has_bits_[0]),
-      -1,
-      -1,
-      sizeof(HelperRequest),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(HelperRequest, _internal_metadata_),
-      -1);
-}
+static const ::google::protobuf::internal::MigrationSchema schemas[] = {
+  { 0, 4, sizeof(MarkovInput)},
+  { 4, 9, sizeof(FutureProto)},
+  { 10, 17, sizeof(PlayFunRequest)},
+  { 20, 29, sizeof(PlayFunResponse)},
+  { 34, 46, sizeof(TryImproveRequest)},
+  { 54, 62, sizeof(TryImproveResponse)},
+  { 66, 72, sizeof(HelperRequest)},
+};
+
+static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&_MarkovInput_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_FutureProto_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_PlayFunRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_PlayFunResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_TryImproveRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_TryImproveResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_HelperRequest_default_instance_),
+};
 
 namespace {
 
-GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
-  ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
-                 &protobuf_AssignDesc_marionet_2eproto);
+void protobuf_AssignDescriptors() {
+  AddDescriptors();
+  ::google::protobuf::MessageFactory* factory = NULL;
+  AssignDescriptors(
+      "marionet.proto", schemas, file_default_instances, TableStruct::offsets, factory,
+      file_level_metadata, file_level_enum_descriptors, NULL);
+}
+
+void protobuf_AssignDescriptorsOnce() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &protobuf_AssignDescriptors);
 }
 
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      MarkovInput_descriptor_, &MarkovInput::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      FutureProto_descriptor_, &FutureProto::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      PlayFunRequest_descriptor_, &PlayFunRequest::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      PlayFunResponse_descriptor_, &PlayFunResponse::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      TryImproveRequest_descriptor_, &TryImproveRequest::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      TryImproveResponse_descriptor_, &TryImproveResponse::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      HelperRequest_descriptor_, &HelperRequest::default_instance());
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 7);
 }
 
 }  // namespace
 
-void protobuf_ShutdownFile_marionet_2eproto() {
-  delete MarkovInput::default_instance_;
-  delete MarkovInput_reflection_;
-  delete FutureProto::default_instance_;
-  delete FutureProto_reflection_;
-  delete PlayFunRequest::default_instance_;
-  delete PlayFunRequest_reflection_;
-  delete PlayFunResponse::default_instance_;
-  delete PlayFunResponse_reflection_;
-  delete TryImproveRequest::default_instance_;
-  delete TryImproveRequest_reflection_;
-  delete TryImproveResponse::default_instance_;
-  delete TryImproveResponse_reflection_;
-  delete HelperRequest::default_instance_;
-  delete HelperRequest_reflection_;
+void TableStruct::Shutdown() {
+  _MarkovInput_default_instance_.Shutdown();
+  delete file_level_metadata[0].reflection;
+  _FutureProto_default_instance_.Shutdown();
+  delete file_level_metadata[1].reflection;
+  _PlayFunRequest_default_instance_.Shutdown();
+  delete file_level_metadata[2].reflection;
+  _PlayFunResponse_default_instance_.Shutdown();
+  delete file_level_metadata[3].reflection;
+  _TryImproveRequest_default_instance_.Shutdown();
+  delete file_level_metadata[4].reflection;
+  _TryImproveResponse_default_instance_.Shutdown();
+  delete file_level_metadata[5].reflection;
+  _HelperRequest_default_instance_.Shutdown();
+  delete file_level_metadata[6].reflection;
 }
 
-void protobuf_AddDesc_marionet_2eproto() GOOGLE_ATTRIBUTE_COLD;
-void protobuf_AddDesc_marionet_2eproto() {
-  static bool already_here = false;
-  if (already_here) return;
-  already_here = true;
+void TableStruct::InitDefaultsImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\016marionet.proto\"\r\n\013MarkovInput\"\035\n\013Futur"
-    "eProto\022\016\n\006inputs\030\004 \001(\014\"T\n\016PlayFunRequest"
-    "\022\025\n\rcurrent_state\030\001 \001(\014\022\014\n\004next\030\002 \001(\014\022\035\n"
-    "\007futures\030\003 \003(\0132\014.FutureProto\"\216\001\n\017PlayFun"
-    "Response\022\027\n\017immediate_score\030\001 \001(\001\022\031\n\021bes"
-    "t_future_score\030\002 \001(\001\022\032\n\022worst_future_sco"
-    "re\030\003 \001(\001\022\025\n\rfutures_score\030\004 \001(\001\022\024\n\014futur"
-    "escores\030\005 \003(\001\"\200\002\n\021TryImproveRequest\022\023\n\013s"
-    "tart_state\030\001 \001(\014\022\021\n\timproveme\030\002 \001(\014\022\021\n\te"
-    "nd_state\030\003 \001(\014\022\024\n\014end_integral\030\004 \001(\001\022-\n\010"
-    "approach\030\005 \001(\0162\033.TryImproveRequest.Appro"
-    "ach\022\014\n\004seed\030\006 \001(\t\022\r\n\005iters\030\007 \001(\005\022\017\n\007maxb"
-    "est\030\010 \001(\005\"=\n\010Approach\022\n\n\006RANDOM\020\000\022\r\n\tOPP"
-    "OSITES\020\001\022\014\n\010ABLATION\020\002\022\010\n\004CHOP\020\003\"^\n\022TryI"
-    "mproveResponse\022\016\n\006inputs\030\001 \003(\014\022\r\n\005score\030"
-    "\002 \003(\001\022\023\n\013iters_tried\030\003 \001(\005\022\024\n\014iters_bett"
-    "er\030\004 \001(\005\"Y\n\rHelperRequest\022 \n\007playfun\030\001 \001"
-    "(\0132\017.PlayFunRequest\022&\n\ntryimprove\030\002 \001(\0132"
-    "\022.TryImproveRequest", 739);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "marionet.proto", &protobuf_RegisterTypes);
-  MarkovInput::default_instance_ = new MarkovInput();
-  FutureProto::default_instance_ = new FutureProto();
-  PlayFunRequest::default_instance_ = new PlayFunRequest();
-  PlayFunResponse::default_instance_ = new PlayFunResponse();
-  TryImproveRequest::default_instance_ = new TryImproveRequest();
-  TryImproveResponse::default_instance_ = new TryImproveResponse();
-  HelperRequest::default_instance_ = new HelperRequest();
-  MarkovInput::default_instance_->InitAsDefaultInstance();
-  FutureProto::default_instance_->InitAsDefaultInstance();
-  PlayFunRequest::default_instance_->InitAsDefaultInstance();
-  PlayFunResponse::default_instance_->InitAsDefaultInstance();
-  TryImproveRequest::default_instance_->InitAsDefaultInstance();
-  TryImproveResponse::default_instance_->InitAsDefaultInstance();
-  HelperRequest::default_instance_->InitAsDefaultInstance();
-  ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_marionet_2eproto);
+  ::google::protobuf::internal::InitProtobufDefaults();
+  _MarkovInput_default_instance_.DefaultConstruct();
+  _FutureProto_default_instance_.DefaultConstruct();
+  _PlayFunRequest_default_instance_.DefaultConstruct();
+  _PlayFunResponse_default_instance_.DefaultConstruct();
+  _TryImproveRequest_default_instance_.DefaultConstruct();
+  _TryImproveResponse_default_instance_.DefaultConstruct();
+  _HelperRequest_default_instance_.DefaultConstruct();
+  _HelperRequest_default_instance_.get_mutable()->playfun_ = const_cast< ::PlayFunRequest*>(
+      ::PlayFunRequest::internal_default_instance());
+  _HelperRequest_default_instance_.get_mutable()->tryimprove_ = const_cast< ::TryImproveRequest*>(
+      ::TryImproveRequest::internal_default_instance());
 }
 
+void InitDefaults() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &TableStruct::InitDefaultsImpl);
+}
+void AddDescriptorsImpl() {
+  InitDefaults();
+  static const char descriptor[] = {
+      "\n\016marionet.proto\"\r\n\013MarkovInput\"\035\n\013Futur"
+      "eProto\022\016\n\006inputs\030\004 \001(\014\"T\n\016PlayFunRequest"
+      "\022\025\n\rcurrent_state\030\001 \001(\014\022\014\n\004next\030\002 \001(\014\022\035\n"
+      "\007futures\030\003 \003(\0132\014.FutureProto\"\216\001\n\017PlayFun"
+      "Response\022\027\n\017immediate_score\030\001 \001(\001\022\031\n\021bes"
+      "t_future_score\030\002 \001(\001\022\032\n\022worst_future_sco"
+      "re\030\003 \001(\001\022\025\n\rfutures_score\030\004 \001(\001\022\024\n\014futur"
+      "escores\030\005 \003(\001\"\200\002\n\021TryImproveRequest\022\023\n\013s"
+      "tart_state\030\001 \001(\014\022\021\n\timproveme\030\002 \001(\014\022\021\n\te"
+      "nd_state\030\003 \001(\014\022\024\n\014end_integral\030\004 \001(\001\022-\n\010"
+      "approach\030\005 \001(\0162\033.TryImproveRequest.Appro"
+      "ach\022\014\n\004seed\030\006 \001(\t\022\r\n\005iters\030\007 \001(\005\022\017\n\007maxb"
+      "est\030\010 \001(\005\"=\n\010Approach\022\n\n\006RANDOM\020\000\022\r\n\tOPP"
+      "OSITES\020\001\022\014\n\010ABLATION\020\002\022\010\n\004CHOP\020\003\"^\n\022TryI"
+      "mproveResponse\022\016\n\006inputs\030\001 \003(\014\022\r\n\005score\030"
+      "\002 \003(\001\022\023\n\013iters_tried\030\003 \001(\005\022\024\n\014iters_bett"
+      "er\030\004 \001(\005\"Y\n\rHelperRequest\022 \n\007playfun\030\001 \001"
+      "(\0132\017.PlayFunRequest\022&\n\ntryimprove\030\002 \001(\0132"
+      "\022.TryImproveRequest"
+  };
+  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
+      descriptor, 739);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
+    "marionet.proto", &protobuf_RegisterTypes);
+  ::google::protobuf::internal::OnShutdown(&TableStruct::Shutdown);
+}
+
+void AddDescriptors() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &AddDescriptorsImpl);
+}
 // Force AddDescriptors() to be called at static initialization time.
-struct StaticDescriptorInitializer_marionet_2eproto {
-  StaticDescriptorInitializer_marionet_2eproto() {
-    protobuf_AddDesc_marionet_2eproto();
+struct StaticDescriptorInitializer {
+  StaticDescriptorInitializer() {
+    AddDescriptors();
   }
-} static_descriptor_initializer_marionet_2eproto_;
+} static_descriptor_initializer;
+
+}  // namespace protobuf_marionet_2eproto
+
+const ::google::protobuf::EnumDescriptor* TryImproveRequest_Approach_descriptor() {
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_enum_descriptors[0];
+}
+bool TryImproveRequest_Approach_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const TryImproveRequest_Approach TryImproveRequest::RANDOM;
+const TryImproveRequest_Approach TryImproveRequest::OPPOSITES;
+const TryImproveRequest_Approach TryImproveRequest::ABLATION;
+const TryImproveRequest_Approach TryImproveRequest::CHOP;
+const TryImproveRequest_Approach TryImproveRequest::Approach_MIN;
+const TryImproveRequest_Approach TryImproveRequest::Approach_MAX;
+const int TryImproveRequest::Approach_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -282,24 +275,23 @@ struct StaticDescriptorInitializer_marionet_2eproto {
 
 MarkovInput::MarkovInput()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_marionet_2eproto::InitDefaults();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:MarkovInput)
 }
-
-void MarkovInput::InitAsDefaultInstance() {
-}
-
 MarkovInput::MarkovInput(const MarkovInput& from)
   : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
-  SharedCtor();
-  MergeFrom(from);
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:MarkovInput)
 }
 
 void MarkovInput::SharedCtor() {
   _cached_size_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 MarkovInput::~MarkovInput() {
@@ -308,8 +300,6 @@ MarkovInput::~MarkovInput() {
 }
 
 void MarkovInput::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void MarkovInput::SetCachedSize(int size) const {
@@ -318,16 +308,14 @@ void MarkovInput::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* MarkovInput::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return MarkovInput_descriptor_;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[0].descriptor;
 }
 
 const MarkovInput& MarkovInput::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_marionet_2eproto();
-  return *default_instance_;
+  protobuf_marionet_2eproto::InitDefaults();
+  return *internal_default_instance();
 }
-
-MarkovInput* MarkovInput::default_instance_ = NULL;
 
 MarkovInput* MarkovInput::New(::google::protobuf::Arena* arena) const {
   MarkovInput* n = new MarkovInput;
@@ -339,10 +327,8 @@ MarkovInput* MarkovInput::New(::google::protobuf::Arena* arena) const {
 
 void MarkovInput::Clear() {
 // @@protoc_insertion_point(message_clear_start:MarkovInput)
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
 }
 
 bool MarkovInput::MergePartialFromCodedStream(
@@ -351,7 +337,7 @@ bool MarkovInput::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:MarkovInput)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
   handle_unusual:
@@ -384,6 +370,7 @@ void MarkovInput::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* MarkovInput::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic;  // Unused
   // @@protoc_insertion_point(serialize_to_array_start:MarkovInput)
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
@@ -393,27 +380,26 @@ void MarkovInput::SerializeWithCachedSizes(
   return target;
 }
 
-int MarkovInput::ByteSize() const {
+size_t MarkovInput::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:MarkovInput)
-  int total_size = 0;
+  size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
   }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void MarkovInput::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:MarkovInput)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const MarkovInput* source = 
+  GOOGLE_DCHECK_NE(&from, this);
+  const MarkovInput* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const MarkovInput>(
           &from);
   if (source == NULL) {
@@ -427,12 +413,8 @@ void MarkovInput::MergeFrom(const ::google::protobuf::Message& from) {
 
 void MarkovInput::MergeFrom(const MarkovInput& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:MarkovInput)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
 }
 
 void MarkovInput::CopyFrom(const ::google::protobuf::Message& from) {
@@ -450,7 +432,6 @@ void MarkovInput::CopyFrom(const MarkovInput& from) {
 }
 
 bool MarkovInput::IsInitialized() const {
-
   return true;
 }
 
@@ -459,16 +440,14 @@ void MarkovInput::Swap(MarkovInput* other) {
   InternalSwap(other);
 }
 void MarkovInput::InternalSwap(MarkovInput* other) {
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata MarkovInput::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = MarkovInput_descriptor_;
-  metadata.reflection = MarkovInput_reflection_;
-  return metadata;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[0];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -484,26 +463,28 @@ const int FutureProto::kInputsFieldNumber;
 
 FutureProto::FutureProto()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_marionet_2eproto::InitDefaults();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:FutureProto)
 }
-
-void FutureProto::InitAsDefaultInstance() {
-}
-
 FutureProto::FutureProto(const FutureProto& from)
   : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
-  SharedCtor();
-  MergeFrom(from);
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  inputs_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_inputs()) {
+    inputs_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.inputs_);
+  }
   // @@protoc_insertion_point(copy_constructor:FutureProto)
 }
 
 void FutureProto::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   inputs_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 FutureProto::~FutureProto() {
@@ -513,8 +494,6 @@ FutureProto::~FutureProto() {
 
 void FutureProto::SharedDtor() {
   inputs_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != default_instance_) {
-  }
 }
 
 void FutureProto::SetCachedSize(int size) const {
@@ -523,16 +502,14 @@ void FutureProto::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* FutureProto::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return FutureProto_descriptor_;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[1].descriptor;
 }
 
 const FutureProto& FutureProto::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_marionet_2eproto();
-  return *default_instance_;
+  protobuf_marionet_2eproto::InitDefaults();
+  return *internal_default_instance();
 }
-
-FutureProto* FutureProto::default_instance_ = NULL;
 
 FutureProto* FutureProto::New(::google::protobuf::Arena* arena) const {
   FutureProto* n = new FutureProto;
@@ -545,12 +522,11 @@ FutureProto* FutureProto::New(::google::protobuf::Arena* arena) const {
 void FutureProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:FutureProto)
   if (has_inputs()) {
-    inputs_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    GOOGLE_DCHECK(!inputs_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+    (*inputs_.UnsafeRawStringPointer())->clear();
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
 }
 
 bool FutureProto::MergePartialFromCodedStream(
@@ -559,19 +535,18 @@ bool FutureProto::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:FutureProto)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional bytes inputs = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 34u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_inputs()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectAtEnd()) goto success;
         break;
       }
 
@@ -615,6 +590,7 @@ void FutureProto::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* FutureProto::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic;  // Unused
   // @@protoc_insertion_point(serialize_to_array_start:FutureProto)
   // optional bytes inputs = 4;
   if (has_inputs()) {
@@ -631,10 +607,15 @@ void FutureProto::SerializeWithCachedSizes(
   return target;
 }
 
-int FutureProto::ByteSize() const {
+size_t FutureProto::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:FutureProto)
-  int total_size = 0;
+  size_t total_size = 0;
 
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
   // optional bytes inputs = 4;
   if (has_inputs()) {
     total_size += 1 +
@@ -642,23 +623,17 @@ int FutureProto::ByteSize() const {
         this->inputs());
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void FutureProto::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:FutureProto)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const FutureProto* source = 
+  GOOGLE_DCHECK_NE(&from, this);
+  const FutureProto* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const FutureProto>(
           &from);
   if (source == NULL) {
@@ -672,17 +647,11 @@ void FutureProto::MergeFrom(const ::google::protobuf::Message& from) {
 
 void FutureProto::MergeFrom(const FutureProto& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:FutureProto)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_inputs()) {
-      set_has_inputs();
-      inputs_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.inputs_);
-    }
-  }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_inputs()) {
+    set_has_inputs();
+    inputs_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.inputs_);
   }
 }
 
@@ -701,7 +670,6 @@ void FutureProto::CopyFrom(const FutureProto& from) {
 }
 
 bool FutureProto::IsInitialized() const {
-
   return true;
 }
 
@@ -717,11 +685,8 @@ void FutureProto::InternalSwap(FutureProto* other) {
 }
 
 ::google::protobuf::Metadata FutureProto::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = FutureProto_descriptor_;
-  metadata.reflection = FutureProto_reflection_;
-  return metadata;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[1];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -741,37 +706,45 @@ void FutureProto::clear_inputs() {
   inputs_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   clear_has_inputs();
 }
- const ::std::string& FutureProto::inputs() const {
+const ::std::string& FutureProto::inputs() const {
   // @@protoc_insertion_point(field_get:FutureProto.inputs)
-  return inputs_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return inputs_.GetNoArena();
 }
- void FutureProto::set_inputs(const ::std::string& value) {
+void FutureProto::set_inputs(const ::std::string& value) {
   set_has_inputs();
   inputs_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:FutureProto.inputs)
 }
- void FutureProto::set_inputs(const char* value) {
+#if LANG_CXX11
+void FutureProto::set_inputs(::std::string&& value) {
+  set_has_inputs();
+  inputs_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:FutureProto.inputs)
+}
+#endif
+void FutureProto::set_inputs(const char* value) {
   set_has_inputs();
   inputs_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:FutureProto.inputs)
 }
- void FutureProto::set_inputs(const void* value, size_t size) {
+void FutureProto::set_inputs(const void* value, size_t size) {
   set_has_inputs();
   inputs_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:FutureProto.inputs)
 }
- ::std::string* FutureProto::mutable_inputs() {
+::std::string* FutureProto::mutable_inputs() {
   set_has_inputs();
   // @@protoc_insertion_point(field_mutable:FutureProto.inputs)
   return inputs_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* FutureProto::release_inputs() {
+::std::string* FutureProto::release_inputs() {
   // @@protoc_insertion_point(field_release:FutureProto.inputs)
   clear_has_inputs();
   return inputs_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void FutureProto::set_allocated_inputs(::std::string* inputs) {
+void FutureProto::set_allocated_inputs(::std::string* inputs) {
   if (inputs != NULL) {
     set_has_inputs();
   } else {
@@ -793,27 +766,34 @@ const int PlayFunRequest::kFuturesFieldNumber;
 
 PlayFunRequest::PlayFunRequest()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_marionet_2eproto::InitDefaults();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:PlayFunRequest)
 }
-
-void PlayFunRequest::InitAsDefaultInstance() {
-}
-
 PlayFunRequest::PlayFunRequest(const PlayFunRequest& from)
   : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
-  SharedCtor();
-  MergeFrom(from);
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      _cached_size_(0),
+      futures_(from.futures_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  current_state_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_current_state()) {
+    current_state_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.current_state_);
+  }
+  next_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_next()) {
+    next_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.next_);
+  }
   // @@protoc_insertion_point(copy_constructor:PlayFunRequest)
 }
 
 void PlayFunRequest::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   current_state_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   next_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
 PlayFunRequest::~PlayFunRequest() {
@@ -824,8 +804,6 @@ PlayFunRequest::~PlayFunRequest() {
 void PlayFunRequest::SharedDtor() {
   current_state_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   next_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != default_instance_) {
-  }
 }
 
 void PlayFunRequest::SetCachedSize(int size) const {
@@ -834,16 +812,14 @@ void PlayFunRequest::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* PlayFunRequest::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return PlayFunRequest_descriptor_;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[2].descriptor;
 }
 
 const PlayFunRequest& PlayFunRequest::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_marionet_2eproto();
-  return *default_instance_;
+  protobuf_marionet_2eproto::InitDefaults();
+  return *internal_default_instance();
 }
-
-PlayFunRequest* PlayFunRequest::default_instance_ = NULL;
 
 PlayFunRequest* PlayFunRequest::New(::google::protobuf::Arena* arena) const {
   PlayFunRequest* n = new PlayFunRequest;
@@ -855,19 +831,19 @@ PlayFunRequest* PlayFunRequest::New(::google::protobuf::Arena* arena) const {
 
 void PlayFunRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:PlayFunRequest)
+  futures_.Clear();
   if (_has_bits_[0 / 32] & 3u) {
     if (has_current_state()) {
-      current_state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      GOOGLE_DCHECK(!current_state_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*current_state_.UnsafeRawStringPointer())->clear();
     }
     if (has_next()) {
-      next_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      GOOGLE_DCHECK(!next_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*next_.UnsafeRawStringPointer())->clear();
     }
   }
-  futures_.Clear();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
 }
 
 bool PlayFunRequest::MergePartialFromCodedStream(
@@ -876,49 +852,42 @@ bool PlayFunRequest::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PlayFunRequest)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional bytes current_state = 1;
       case 1: {
-        if (tag == 10) {
+        if (tag == 10u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_current_state()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_next;
         break;
       }
 
       // optional bytes next = 2;
       case 2: {
-        if (tag == 18) {
-         parse_next:
+        if (tag == 18u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_next()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_futures;
         break;
       }
 
       // repeated .FutureProto futures = 3;
       case 3: {
-        if (tag == 26) {
-         parse_futures:
+        if (tag == 26u) {
           DO_(input->IncrementRecursionDepth());
-         parse_loop_futures:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
                 input, add_futures()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_loop_futures;
         input->UnsafeDecrementRecursionDepth();
-        if (input->ExpectAtEnd()) goto success;
         break;
       }
 
@@ -974,6 +943,7 @@ void PlayFunRequest::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* PlayFunRequest::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic;  // Unused
   // @@protoc_insertion_point(serialize_to_array_start:PlayFunRequest)
   // optional bytes current_state = 1;
   if (has_current_state()) {
@@ -1004,9 +974,25 @@ void PlayFunRequest::SerializeWithCachedSizes(
   return target;
 }
 
-int PlayFunRequest::ByteSize() const {
+size_t PlayFunRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:PlayFunRequest)
-  int total_size = 0;
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  // repeated .FutureProto futures = 3;
+  {
+    unsigned int count = this->futures_size();
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->futures(i));
+    }
+  }
 
   if (_has_bits_[0 / 32] & 3u) {
     // optional bytes current_state = 1;
@@ -1024,31 +1010,17 @@ int PlayFunRequest::ByteSize() const {
     }
 
   }
-  // repeated .FutureProto futures = 3;
-  total_size += 1 * this->futures_size();
-  for (int i = 0; i < this->futures_size(); i++) {
-    total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->futures(i));
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void PlayFunRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:PlayFunRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const PlayFunRequest* source = 
+  GOOGLE_DCHECK_NE(&from, this);
+  const PlayFunRequest* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const PlayFunRequest>(
           &from);
   if (source == NULL) {
@@ -1062,11 +1034,10 @@ void PlayFunRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void PlayFunRequest::MergeFrom(const PlayFunRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:PlayFunRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   futures_.MergeFrom(from.futures_);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (from._has_bits_[0 / 32] & 3u) {
     if (from.has_current_state()) {
       set_has_current_state();
       current_state_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.current_state_);
@@ -1075,9 +1046,6 @@ void PlayFunRequest::MergeFrom(const PlayFunRequest& from) {
       set_has_next();
       next_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.next_);
     }
-  }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
   }
 }
 
@@ -1096,7 +1064,6 @@ void PlayFunRequest::CopyFrom(const PlayFunRequest& from) {
 }
 
 bool PlayFunRequest::IsInitialized() const {
-
   return true;
 }
 
@@ -1105,20 +1072,17 @@ void PlayFunRequest::Swap(PlayFunRequest* other) {
   InternalSwap(other);
 }
 void PlayFunRequest::InternalSwap(PlayFunRequest* other) {
+  futures_.UnsafeArenaSwap(&other->futures_);
   current_state_.Swap(&other->current_state_);
   next_.Swap(&other->next_);
-  futures_.UnsafeArenaSwap(&other->futures_);
   std::swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PlayFunRequest::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = PlayFunRequest_descriptor_;
-  metadata.reflection = PlayFunRequest_reflection_;
-  return metadata;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[2];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -1138,37 +1102,45 @@ void PlayFunRequest::clear_current_state() {
   current_state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   clear_has_current_state();
 }
- const ::std::string& PlayFunRequest::current_state() const {
+const ::std::string& PlayFunRequest::current_state() const {
   // @@protoc_insertion_point(field_get:PlayFunRequest.current_state)
-  return current_state_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return current_state_.GetNoArena();
 }
- void PlayFunRequest::set_current_state(const ::std::string& value) {
+void PlayFunRequest::set_current_state(const ::std::string& value) {
   set_has_current_state();
   current_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:PlayFunRequest.current_state)
 }
- void PlayFunRequest::set_current_state(const char* value) {
+#if LANG_CXX11
+void PlayFunRequest::set_current_state(::std::string&& value) {
+  set_has_current_state();
+  current_state_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:PlayFunRequest.current_state)
+}
+#endif
+void PlayFunRequest::set_current_state(const char* value) {
   set_has_current_state();
   current_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:PlayFunRequest.current_state)
 }
- void PlayFunRequest::set_current_state(const void* value, size_t size) {
+void PlayFunRequest::set_current_state(const void* value, size_t size) {
   set_has_current_state();
   current_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:PlayFunRequest.current_state)
 }
- ::std::string* PlayFunRequest::mutable_current_state() {
+::std::string* PlayFunRequest::mutable_current_state() {
   set_has_current_state();
   // @@protoc_insertion_point(field_mutable:PlayFunRequest.current_state)
   return current_state_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* PlayFunRequest::release_current_state() {
+::std::string* PlayFunRequest::release_current_state() {
   // @@protoc_insertion_point(field_release:PlayFunRequest.current_state)
   clear_has_current_state();
   return current_state_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void PlayFunRequest::set_allocated_current_state(::std::string* current_state) {
+void PlayFunRequest::set_allocated_current_state(::std::string* current_state) {
   if (current_state != NULL) {
     set_has_current_state();
   } else {
@@ -1192,37 +1164,45 @@ void PlayFunRequest::clear_next() {
   next_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   clear_has_next();
 }
- const ::std::string& PlayFunRequest::next() const {
+const ::std::string& PlayFunRequest::next() const {
   // @@protoc_insertion_point(field_get:PlayFunRequest.next)
-  return next_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return next_.GetNoArena();
 }
- void PlayFunRequest::set_next(const ::std::string& value) {
+void PlayFunRequest::set_next(const ::std::string& value) {
   set_has_next();
   next_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:PlayFunRequest.next)
 }
- void PlayFunRequest::set_next(const char* value) {
+#if LANG_CXX11
+void PlayFunRequest::set_next(::std::string&& value) {
+  set_has_next();
+  next_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:PlayFunRequest.next)
+}
+#endif
+void PlayFunRequest::set_next(const char* value) {
   set_has_next();
   next_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:PlayFunRequest.next)
 }
- void PlayFunRequest::set_next(const void* value, size_t size) {
+void PlayFunRequest::set_next(const void* value, size_t size) {
   set_has_next();
   next_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:PlayFunRequest.next)
 }
- ::std::string* PlayFunRequest::mutable_next() {
+::std::string* PlayFunRequest::mutable_next() {
   set_has_next();
   // @@protoc_insertion_point(field_mutable:PlayFunRequest.next)
   return next_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* PlayFunRequest::release_next() {
+::std::string* PlayFunRequest::release_next() {
   // @@protoc_insertion_point(field_release:PlayFunRequest.next)
   clear_has_next();
   return next_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void PlayFunRequest::set_allocated_next(::std::string* next) {
+void PlayFunRequest::set_allocated_next(::std::string* next) {
   if (next != NULL) {
     set_has_next();
   } else {
@@ -1276,28 +1256,29 @@ const int PlayFunResponse::kFuturescoresFieldNumber;
 
 PlayFunResponse::PlayFunResponse()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_marionet_2eproto::InitDefaults();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:PlayFunResponse)
 }
-
-void PlayFunResponse::InitAsDefaultInstance() {
-}
-
 PlayFunResponse::PlayFunResponse(const PlayFunResponse& from)
   : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
-  SharedCtor();
-  MergeFrom(from);
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      _cached_size_(0),
+      futurescores_(from.futurescores_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&immediate_score_, &from.immediate_score_,
+    reinterpret_cast<char*>(&futures_score_) -
+    reinterpret_cast<char*>(&immediate_score_) + sizeof(futures_score_));
   // @@protoc_insertion_point(copy_constructor:PlayFunResponse)
 }
 
 void PlayFunResponse::SharedCtor() {
   _cached_size_ = 0;
-  immediate_score_ = 0;
-  best_future_score_ = 0;
-  worst_future_score_ = 0;
-  futures_score_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  ::memset(&immediate_score_, 0, reinterpret_cast<char*>(&futures_score_) -
+    reinterpret_cast<char*>(&immediate_score_) + sizeof(futures_score_));
 }
 
 PlayFunResponse::~PlayFunResponse() {
@@ -1306,8 +1287,6 @@ PlayFunResponse::~PlayFunResponse() {
 }
 
 void PlayFunResponse::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void PlayFunResponse::SetCachedSize(int size) const {
@@ -1316,16 +1295,14 @@ void PlayFunResponse::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* PlayFunResponse::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return PlayFunResponse_descriptor_;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[3].descriptor;
 }
 
 const PlayFunResponse& PlayFunResponse::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_marionet_2eproto();
-  return *default_instance_;
+  protobuf_marionet_2eproto::InitDefaults();
+  return *internal_default_instance();
 }
-
-PlayFunResponse* PlayFunResponse::default_instance_ = NULL;
 
 PlayFunResponse* PlayFunResponse::New(::google::protobuf::Arena* arena) const {
   PlayFunResponse* n = new PlayFunResponse;
@@ -1337,32 +1314,13 @@ PlayFunResponse* PlayFunResponse::New(::google::protobuf::Arena* arena) const {
 
 void PlayFunResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:PlayFunResponse)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(PlayFunResponse, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<PlayFunResponse*>(16)->f)
-#endif
-
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
-
-  ZR_(immediate_score_, futures_score_);
-
-#undef ZR_HELPER_
-#undef ZR_
-
   futurescores_.Clear();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
+  if (_has_bits_[0 / 32] & 15u) {
+    ::memset(&immediate_score_, 0, reinterpret_cast<char*>(&futures_score_) -
+      reinterpret_cast<char*>(&immediate_score_) + sizeof(futures_score_));
   }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
 }
 
 bool PlayFunResponse::MergePartialFromCodedStream(
@@ -1371,85 +1329,75 @@ bool PlayFunResponse::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PlayFunResponse)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional double immediate_score = 1;
       case 1: {
-        if (tag == 9) {
+        if (tag == 9u) {
+          set_has_immediate_score();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &immediate_score_)));
-          set_has_immediate_score();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(17)) goto parse_best_future_score;
         break;
       }
 
       // optional double best_future_score = 2;
       case 2: {
-        if (tag == 17) {
-         parse_best_future_score:
+        if (tag == 17u) {
+          set_has_best_future_score();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &best_future_score_)));
-          set_has_best_future_score();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(25)) goto parse_worst_future_score;
         break;
       }
 
       // optional double worst_future_score = 3;
       case 3: {
-        if (tag == 25) {
-         parse_worst_future_score:
+        if (tag == 25u) {
+          set_has_worst_future_score();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &worst_future_score_)));
-          set_has_worst_future_score();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(33)) goto parse_futures_score;
         break;
       }
 
       // optional double futures_score = 4;
       case 4: {
-        if (tag == 33) {
-         parse_futures_score:
+        if (tag == 33u) {
+          set_has_futures_score();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &futures_score_)));
-          set_has_futures_score();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(41)) goto parse_futurescores;
         break;
       }
 
       // repeated double futurescores = 5;
       case 5: {
-        if (tag == 41) {
-         parse_futurescores:
+        if (tag == 41u) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 1, 41, input, this->mutable_futurescores())));
-        } else if (tag == 42) {
+                 1, 41u, input, this->mutable_futurescores())));
+        } else if (tag == 42u) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, this->mutable_futurescores())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(41)) goto parse_futurescores;
-        if (input->ExpectAtEnd()) goto success;
         break;
       }
 
@@ -1513,6 +1461,7 @@ void PlayFunResponse::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* PlayFunResponse::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic;  // Unused
   // @@protoc_insertion_point(serialize_to_array_start:PlayFunResponse)
   // optional double immediate_score = 1;
   if (has_immediate_score()) {
@@ -1548,9 +1497,23 @@ void PlayFunResponse::SerializeWithCachedSizes(
   return target;
 }
 
-int PlayFunResponse::ByteSize() const {
+size_t PlayFunResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:PlayFunResponse)
-  int total_size = 0;
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  // repeated double futurescores = 5;
+  {
+    unsigned int count = this->futurescores_size();
+    size_t data_size = 8UL * count;
+    total_size += 1 *
+                  ::google::protobuf::internal::FromIntSize(this->futurescores_size());
+    total_size += data_size;
+  }
 
   if (_has_bits_[0 / 32] & 15u) {
     // optional double immediate_score = 1;
@@ -1574,30 +1537,17 @@ int PlayFunResponse::ByteSize() const {
     }
 
   }
-  // repeated double futurescores = 5;
-  {
-    int data_size = 0;
-    data_size = 8 * this->futurescores_size();
-    total_size += 1 * this->futurescores_size() + data_size;
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void PlayFunResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:PlayFunResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const PlayFunResponse* source = 
+  GOOGLE_DCHECK_NE(&from, this);
+  const PlayFunResponse* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const PlayFunResponse>(
           &from);
   if (source == NULL) {
@@ -1611,11 +1561,10 @@ void PlayFunResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void PlayFunResponse::MergeFrom(const PlayFunResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:PlayFunResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   futurescores_.MergeFrom(from.futurescores_);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (from._has_bits_[0 / 32] & 15u) {
     if (from.has_immediate_score()) {
       set_immediate_score(from.immediate_score());
     }
@@ -1628,9 +1577,6 @@ void PlayFunResponse::MergeFrom(const PlayFunResponse& from) {
     if (from.has_futures_score()) {
       set_futures_score(from.futures_score());
     }
-  }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
   }
 }
 
@@ -1649,7 +1595,6 @@ void PlayFunResponse::CopyFrom(const PlayFunResponse& from) {
 }
 
 bool PlayFunResponse::IsInitialized() const {
-
   return true;
 }
 
@@ -1658,22 +1603,19 @@ void PlayFunResponse::Swap(PlayFunResponse* other) {
   InternalSwap(other);
 }
 void PlayFunResponse::InternalSwap(PlayFunResponse* other) {
+  futurescores_.UnsafeArenaSwap(&other->futurescores_);
   std::swap(immediate_score_, other->immediate_score_);
   std::swap(best_future_score_, other->best_future_score_);
   std::swap(worst_future_score_, other->worst_future_score_);
   std::swap(futures_score_, other->futures_score_);
-  futurescores_.UnsafeArenaSwap(&other->futurescores_);
   std::swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PlayFunResponse::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = PlayFunResponse_descriptor_;
-  metadata.reflection = PlayFunResponse_reflection_;
-  return metadata;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[3];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -1693,11 +1635,11 @@ void PlayFunResponse::clear_immediate_score() {
   immediate_score_ = 0;
   clear_has_immediate_score();
 }
- double PlayFunResponse::immediate_score() const {
+double PlayFunResponse::immediate_score() const {
   // @@protoc_insertion_point(field_get:PlayFunResponse.immediate_score)
   return immediate_score_;
 }
- void PlayFunResponse::set_immediate_score(double value) {
+void PlayFunResponse::set_immediate_score(double value) {
   set_has_immediate_score();
   immediate_score_ = value;
   // @@protoc_insertion_point(field_set:PlayFunResponse.immediate_score)
@@ -1717,11 +1659,11 @@ void PlayFunResponse::clear_best_future_score() {
   best_future_score_ = 0;
   clear_has_best_future_score();
 }
- double PlayFunResponse::best_future_score() const {
+double PlayFunResponse::best_future_score() const {
   // @@protoc_insertion_point(field_get:PlayFunResponse.best_future_score)
   return best_future_score_;
 }
- void PlayFunResponse::set_best_future_score(double value) {
+void PlayFunResponse::set_best_future_score(double value) {
   set_has_best_future_score();
   best_future_score_ = value;
   // @@protoc_insertion_point(field_set:PlayFunResponse.best_future_score)
@@ -1741,11 +1683,11 @@ void PlayFunResponse::clear_worst_future_score() {
   worst_future_score_ = 0;
   clear_has_worst_future_score();
 }
- double PlayFunResponse::worst_future_score() const {
+double PlayFunResponse::worst_future_score() const {
   // @@protoc_insertion_point(field_get:PlayFunResponse.worst_future_score)
   return worst_future_score_;
 }
- void PlayFunResponse::set_worst_future_score(double value) {
+void PlayFunResponse::set_worst_future_score(double value) {
   set_has_worst_future_score();
   worst_future_score_ = value;
   // @@protoc_insertion_point(field_set:PlayFunResponse.worst_future_score)
@@ -1765,11 +1707,11 @@ void PlayFunResponse::clear_futures_score() {
   futures_score_ = 0;
   clear_has_futures_score();
 }
- double PlayFunResponse::futures_score() const {
+double PlayFunResponse::futures_score() const {
   // @@protoc_insertion_point(field_get:PlayFunResponse.futures_score)
   return futures_score_;
 }
- void PlayFunResponse::set_futures_score(double value) {
+void PlayFunResponse::set_futures_score(double value) {
   set_has_futures_score();
   futures_score_ = value;
   // @@protoc_insertion_point(field_set:PlayFunResponse.futures_score)
@@ -1782,24 +1724,24 @@ int PlayFunResponse::futurescores_size() const {
 void PlayFunResponse::clear_futurescores() {
   futurescores_.Clear();
 }
- double PlayFunResponse::futurescores(int index) const {
+double PlayFunResponse::futurescores(int index) const {
   // @@protoc_insertion_point(field_get:PlayFunResponse.futurescores)
   return futurescores_.Get(index);
 }
- void PlayFunResponse::set_futurescores(int index, double value) {
+void PlayFunResponse::set_futurescores(int index, double value) {
   futurescores_.Set(index, value);
   // @@protoc_insertion_point(field_set:PlayFunResponse.futurescores)
 }
- void PlayFunResponse::add_futurescores(double value) {
+void PlayFunResponse::add_futurescores(double value) {
   futurescores_.Add(value);
   // @@protoc_insertion_point(field_add:PlayFunResponse.futurescores)
 }
- const ::google::protobuf::RepeatedField< double >&
+const ::google::protobuf::RepeatedField< double >&
 PlayFunResponse::futurescores() const {
   // @@protoc_insertion_point(field_list:PlayFunResponse.futurescores)
   return futurescores_;
 }
- ::google::protobuf::RepeatedField< double >*
+::google::protobuf::RepeatedField< double >*
 PlayFunResponse::mutable_futurescores() {
   // @@protoc_insertion_point(field_mutable_list:PlayFunResponse.futurescores)
   return &futurescores_;
@@ -1809,31 +1751,6 @@ PlayFunResponse::mutable_futurescores() {
 
 // ===================================================================
 
-const ::google::protobuf::EnumDescriptor* TryImproveRequest_Approach_descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return TryImproveRequest_Approach_descriptor_;
-}
-bool TryImproveRequest_Approach_IsValid(int value) {
-  switch(value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-      return true;
-    default:
-      return false;
-  }
-}
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const TryImproveRequest_Approach TryImproveRequest::RANDOM;
-const TryImproveRequest_Approach TryImproveRequest::OPPOSITES;
-const TryImproveRequest_Approach TryImproveRequest::ABLATION;
-const TryImproveRequest_Approach TryImproveRequest::CHOP;
-const TryImproveRequest_Approach TryImproveRequest::Approach_MIN;
-const TryImproveRequest_Approach TryImproveRequest::Approach_MAX;
-const int TryImproveRequest::Approach_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TryImproveRequest::kStartStateFieldNumber;
 const int TryImproveRequest::kImprovemeFieldNumber;
@@ -1847,33 +1764,48 @@ const int TryImproveRequest::kMaxbestFieldNumber;
 
 TryImproveRequest::TryImproveRequest()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_marionet_2eproto::InitDefaults();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:TryImproveRequest)
 }
-
-void TryImproveRequest::InitAsDefaultInstance() {
-}
-
 TryImproveRequest::TryImproveRequest(const TryImproveRequest& from)
   : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
-  SharedCtor();
-  MergeFrom(from);
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  start_state_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_start_state()) {
+    start_state_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.start_state_);
+  }
+  improveme_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_improveme()) {
+    improveme_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.improveme_);
+  }
+  end_state_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_end_state()) {
+    end_state_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.end_state_);
+  }
+  seed_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_seed()) {
+    seed_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.seed_);
+  }
+  ::memcpy(&end_integral_, &from.end_integral_,
+    reinterpret_cast<char*>(&maxbest_) -
+    reinterpret_cast<char*>(&end_integral_) + sizeof(maxbest_));
   // @@protoc_insertion_point(copy_constructor:TryImproveRequest)
 }
 
 void TryImproveRequest::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   start_state_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   improveme_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   end_state_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  end_integral_ = 0;
-  approach_ = 0;
   seed_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  iters_ = 0;
-  maxbest_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  ::memset(&end_integral_, 0, reinterpret_cast<char*>(&maxbest_) -
+    reinterpret_cast<char*>(&end_integral_) + sizeof(maxbest_));
 }
 
 TryImproveRequest::~TryImproveRequest() {
@@ -1886,8 +1818,6 @@ void TryImproveRequest::SharedDtor() {
   improveme_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   end_state_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   seed_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != default_instance_) {
-  }
 }
 
 void TryImproveRequest::SetCachedSize(int size) const {
@@ -1896,16 +1826,14 @@ void TryImproveRequest::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* TryImproveRequest::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return TryImproveRequest_descriptor_;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[4].descriptor;
 }
 
 const TryImproveRequest& TryImproveRequest::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_marionet_2eproto();
-  return *default_instance_;
+  protobuf_marionet_2eproto::InitDefaults();
+  return *internal_default_instance();
 }
-
-TryImproveRequest* TryImproveRequest::default_instance_ = NULL;
 
 TryImproveRequest* TryImproveRequest::New(::google::protobuf::Arena* arena) const {
   TryImproveRequest* n = new TryImproveRequest;
@@ -1917,46 +1845,30 @@ TryImproveRequest* TryImproveRequest::New(::google::protobuf::Arena* arena) cons
 
 void TryImproveRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:TryImproveRequest)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(TryImproveRequest, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<TryImproveRequest*>(16)->f)
-#endif
-
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
-
-  if (_has_bits_[0 / 32] & 255u) {
-    ZR_(approach_, maxbest_);
+  if (_has_bits_[0 / 32] & 15u) {
     if (has_start_state()) {
-      start_state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      GOOGLE_DCHECK(!start_state_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*start_state_.UnsafeRawStringPointer())->clear();
     }
     if (has_improveme()) {
-      improveme_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      GOOGLE_DCHECK(!improveme_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*improveme_.UnsafeRawStringPointer())->clear();
     }
     if (has_end_state()) {
-      end_state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      GOOGLE_DCHECK(!end_state_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*end_state_.UnsafeRawStringPointer())->clear();
     }
-    end_integral_ = 0;
     if (has_seed()) {
-      seed_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      GOOGLE_DCHECK(!seed_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
+      (*seed_.UnsafeRawStringPointer())->clear();
     }
   }
-
-#undef ZR_HELPER_
-#undef ZR_
-
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
+  if (_has_bits_[0 / 32] & 240u) {
+    ::memset(&end_integral_, 0, reinterpret_cast<char*>(&maxbest_) -
+      reinterpret_cast<char*>(&end_integral_) + sizeof(maxbest_));
   }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
 }
 
 bool TryImproveRequest::MergePartialFromCodedStream(
@@ -1965,67 +1877,59 @@ bool TryImproveRequest::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:TryImproveRequest)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional bytes start_state = 1;
       case 1: {
-        if (tag == 10) {
+        if (tag == 10u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_start_state()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_improveme;
         break;
       }
 
       // optional bytes improveme = 2;
       case 2: {
-        if (tag == 18) {
-         parse_improveme:
+        if (tag == 18u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_improveme()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_end_state;
         break;
       }
 
       // optional bytes end_state = 3;
       case 3: {
-        if (tag == 26) {
-         parse_end_state:
+        if (tag == 26u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_end_state()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(33)) goto parse_end_integral;
         break;
       }
 
       // optional double end_integral = 4;
       case 4: {
-        if (tag == 33) {
-         parse_end_integral:
+        if (tag == 33u) {
+          set_has_end_integral();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &end_integral_)));
-          set_has_end_integral();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(40)) goto parse_approach;
         break;
       }
 
       // optional .TryImproveRequest.Approach approach = 5;
       case 5: {
-        if (tag == 40) {
-         parse_approach:
+        if (tag == 40u) {
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
@@ -2038,14 +1942,12 @@ bool TryImproveRequest::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(50)) goto parse_seed;
         break;
       }
 
       // optional string seed = 6;
       case 6: {
-        if (tag == 50) {
-         parse_seed:
+        if (tag == 50u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_seed()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
@@ -2055,37 +1957,32 @@ bool TryImproveRequest::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(56)) goto parse_iters;
         break;
       }
 
       // optional int32 iters = 7;
       case 7: {
-        if (tag == 56) {
-         parse_iters:
+        if (tag == 56u) {
+          set_has_iters();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &iters_)));
-          set_has_iters();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(64)) goto parse_maxbest;
         break;
       }
 
       // optional int32 maxbest = 8;
       case 8: {
-        if (tag == 64) {
-         parse_maxbest:
+        if (tag == 64u) {
+          set_has_maxbest();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &maxbest_)));
-          set_has_maxbest();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectAtEnd()) goto success;
         break;
       }
 
@@ -2172,6 +2069,7 @@ void TryImproveRequest::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* TryImproveRequest::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic;  // Unused
   // @@protoc_insertion_point(serialize_to_array_start:TryImproveRequest)
   // optional bytes start_state = 1;
   if (has_start_state()) {
@@ -2234,10 +2132,15 @@ void TryImproveRequest::SerializeWithCachedSizes(
   return target;
 }
 
-int TryImproveRequest::ByteSize() const {
+size_t TryImproveRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:TryImproveRequest)
-  int total_size = 0;
+  size_t total_size = 0;
 
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
   if (_has_bits_[0 / 32] & 255u) {
     // optional bytes start_state = 1;
     if (has_start_state()) {
@@ -2260,6 +2163,13 @@ int TryImproveRequest::ByteSize() const {
           this->end_state());
     }
 
+    // optional string seed = 6;
+    if (has_seed()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->seed());
+    }
+
     // optional double end_integral = 4;
     if (has_end_integral()) {
       total_size += 1 + 8;
@@ -2269,13 +2179,6 @@ int TryImproveRequest::ByteSize() const {
     if (has_approach()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->approach());
-    }
-
-    // optional string seed = 6;
-    if (has_seed()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->seed());
     }
 
     // optional int32 iters = 7;
@@ -2293,23 +2196,17 @@ int TryImproveRequest::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void TryImproveRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:TryImproveRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const TryImproveRequest* source = 
+  GOOGLE_DCHECK_NE(&from, this);
+  const TryImproveRequest* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const TryImproveRequest>(
           &from);
   if (source == NULL) {
@@ -2323,10 +2220,9 @@ void TryImproveRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void TryImproveRequest::MergeFrom(const TryImproveRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:TryImproveRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._has_bits_[0 / 32] & 255u) {
     if (from.has_start_state()) {
       set_has_start_state();
       start_state_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.start_state_);
@@ -2339,15 +2235,15 @@ void TryImproveRequest::MergeFrom(const TryImproveRequest& from) {
       set_has_end_state();
       end_state_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.end_state_);
     }
+    if (from.has_seed()) {
+      set_has_seed();
+      seed_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.seed_);
+    }
     if (from.has_end_integral()) {
       set_end_integral(from.end_integral());
     }
     if (from.has_approach()) {
       set_approach(from.approach());
-    }
-    if (from.has_seed()) {
-      set_has_seed();
-      seed_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.seed_);
     }
     if (from.has_iters()) {
       set_iters(from.iters());
@@ -2355,9 +2251,6 @@ void TryImproveRequest::MergeFrom(const TryImproveRequest& from) {
     if (from.has_maxbest()) {
       set_maxbest(from.maxbest());
     }
-  }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
   }
 }
 
@@ -2376,7 +2269,6 @@ void TryImproveRequest::CopyFrom(const TryImproveRequest& from) {
 }
 
 bool TryImproveRequest::IsInitialized() const {
-
   return true;
 }
 
@@ -2388,9 +2280,9 @@ void TryImproveRequest::InternalSwap(TryImproveRequest* other) {
   start_state_.Swap(&other->start_state_);
   improveme_.Swap(&other->improveme_);
   end_state_.Swap(&other->end_state_);
+  seed_.Swap(&other->seed_);
   std::swap(end_integral_, other->end_integral_);
   std::swap(approach_, other->approach_);
-  seed_.Swap(&other->seed_);
   std::swap(iters_, other->iters_);
   std::swap(maxbest_, other->maxbest_);
   std::swap(_has_bits_[0], other->_has_bits_[0]);
@@ -2399,11 +2291,8 @@ void TryImproveRequest::InternalSwap(TryImproveRequest* other) {
 }
 
 ::google::protobuf::Metadata TryImproveRequest::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = TryImproveRequest_descriptor_;
-  metadata.reflection = TryImproveRequest_reflection_;
-  return metadata;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[4];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -2423,37 +2312,45 @@ void TryImproveRequest::clear_start_state() {
   start_state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   clear_has_start_state();
 }
- const ::std::string& TryImproveRequest::start_state() const {
+const ::std::string& TryImproveRequest::start_state() const {
   // @@protoc_insertion_point(field_get:TryImproveRequest.start_state)
-  return start_state_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return start_state_.GetNoArena();
 }
- void TryImproveRequest::set_start_state(const ::std::string& value) {
+void TryImproveRequest::set_start_state(const ::std::string& value) {
   set_has_start_state();
   start_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:TryImproveRequest.start_state)
 }
- void TryImproveRequest::set_start_state(const char* value) {
+#if LANG_CXX11
+void TryImproveRequest::set_start_state(::std::string&& value) {
+  set_has_start_state();
+  start_state_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:TryImproveRequest.start_state)
+}
+#endif
+void TryImproveRequest::set_start_state(const char* value) {
   set_has_start_state();
   start_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:TryImproveRequest.start_state)
 }
- void TryImproveRequest::set_start_state(const void* value, size_t size) {
+void TryImproveRequest::set_start_state(const void* value, size_t size) {
   set_has_start_state();
   start_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:TryImproveRequest.start_state)
 }
- ::std::string* TryImproveRequest::mutable_start_state() {
+::std::string* TryImproveRequest::mutable_start_state() {
   set_has_start_state();
   // @@protoc_insertion_point(field_mutable:TryImproveRequest.start_state)
   return start_state_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* TryImproveRequest::release_start_state() {
+::std::string* TryImproveRequest::release_start_state() {
   // @@protoc_insertion_point(field_release:TryImproveRequest.start_state)
   clear_has_start_state();
   return start_state_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void TryImproveRequest::set_allocated_start_state(::std::string* start_state) {
+void TryImproveRequest::set_allocated_start_state(::std::string* start_state) {
   if (start_state != NULL) {
     set_has_start_state();
   } else {
@@ -2477,37 +2374,45 @@ void TryImproveRequest::clear_improveme() {
   improveme_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   clear_has_improveme();
 }
- const ::std::string& TryImproveRequest::improveme() const {
+const ::std::string& TryImproveRequest::improveme() const {
   // @@protoc_insertion_point(field_get:TryImproveRequest.improveme)
-  return improveme_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return improveme_.GetNoArena();
 }
- void TryImproveRequest::set_improveme(const ::std::string& value) {
+void TryImproveRequest::set_improveme(const ::std::string& value) {
   set_has_improveme();
   improveme_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:TryImproveRequest.improveme)
 }
- void TryImproveRequest::set_improveme(const char* value) {
+#if LANG_CXX11
+void TryImproveRequest::set_improveme(::std::string&& value) {
+  set_has_improveme();
+  improveme_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:TryImproveRequest.improveme)
+}
+#endif
+void TryImproveRequest::set_improveme(const char* value) {
   set_has_improveme();
   improveme_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:TryImproveRequest.improveme)
 }
- void TryImproveRequest::set_improveme(const void* value, size_t size) {
+void TryImproveRequest::set_improveme(const void* value, size_t size) {
   set_has_improveme();
   improveme_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:TryImproveRequest.improveme)
 }
- ::std::string* TryImproveRequest::mutable_improveme() {
+::std::string* TryImproveRequest::mutable_improveme() {
   set_has_improveme();
   // @@protoc_insertion_point(field_mutable:TryImproveRequest.improveme)
   return improveme_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* TryImproveRequest::release_improveme() {
+::std::string* TryImproveRequest::release_improveme() {
   // @@protoc_insertion_point(field_release:TryImproveRequest.improveme)
   clear_has_improveme();
   return improveme_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void TryImproveRequest::set_allocated_improveme(::std::string* improveme) {
+void TryImproveRequest::set_allocated_improveme(::std::string* improveme) {
   if (improveme != NULL) {
     set_has_improveme();
   } else {
@@ -2531,37 +2436,45 @@ void TryImproveRequest::clear_end_state() {
   end_state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   clear_has_end_state();
 }
- const ::std::string& TryImproveRequest::end_state() const {
+const ::std::string& TryImproveRequest::end_state() const {
   // @@protoc_insertion_point(field_get:TryImproveRequest.end_state)
-  return end_state_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return end_state_.GetNoArena();
 }
- void TryImproveRequest::set_end_state(const ::std::string& value) {
+void TryImproveRequest::set_end_state(const ::std::string& value) {
   set_has_end_state();
   end_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:TryImproveRequest.end_state)
 }
- void TryImproveRequest::set_end_state(const char* value) {
+#if LANG_CXX11
+void TryImproveRequest::set_end_state(::std::string&& value) {
+  set_has_end_state();
+  end_state_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:TryImproveRequest.end_state)
+}
+#endif
+void TryImproveRequest::set_end_state(const char* value) {
   set_has_end_state();
   end_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:TryImproveRequest.end_state)
 }
- void TryImproveRequest::set_end_state(const void* value, size_t size) {
+void TryImproveRequest::set_end_state(const void* value, size_t size) {
   set_has_end_state();
   end_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:TryImproveRequest.end_state)
 }
- ::std::string* TryImproveRequest::mutable_end_state() {
+::std::string* TryImproveRequest::mutable_end_state() {
   set_has_end_state();
   // @@protoc_insertion_point(field_mutable:TryImproveRequest.end_state)
   return end_state_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* TryImproveRequest::release_end_state() {
+::std::string* TryImproveRequest::release_end_state() {
   // @@protoc_insertion_point(field_release:TryImproveRequest.end_state)
   clear_has_end_state();
   return end_state_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void TryImproveRequest::set_allocated_end_state(::std::string* end_state) {
+void TryImproveRequest::set_allocated_end_state(::std::string* end_state) {
   if (end_state != NULL) {
     set_has_end_state();
   } else {
@@ -2573,23 +2486,23 @@ void TryImproveRequest::clear_end_state() {
 
 // optional double end_integral = 4;
 bool TryImproveRequest::has_end_integral() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 void TryImproveRequest::set_has_end_integral() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
 }
 void TryImproveRequest::clear_has_end_integral() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 void TryImproveRequest::clear_end_integral() {
   end_integral_ = 0;
   clear_has_end_integral();
 }
- double TryImproveRequest::end_integral() const {
+double TryImproveRequest::end_integral() const {
   // @@protoc_insertion_point(field_get:TryImproveRequest.end_integral)
   return end_integral_;
 }
- void TryImproveRequest::set_end_integral(double value) {
+void TryImproveRequest::set_end_integral(double value) {
   set_has_end_integral();
   end_integral_ = value;
   // @@protoc_insertion_point(field_set:TryImproveRequest.end_integral)
@@ -2597,23 +2510,23 @@ void TryImproveRequest::clear_end_integral() {
 
 // optional .TryImproveRequest.Approach approach = 5;
 bool TryImproveRequest::has_approach() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 void TryImproveRequest::set_has_approach() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
 }
 void TryImproveRequest::clear_has_approach() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 void TryImproveRequest::clear_approach() {
   approach_ = 0;
   clear_has_approach();
 }
- ::TryImproveRequest_Approach TryImproveRequest::approach() const {
+::TryImproveRequest_Approach TryImproveRequest::approach() const {
   // @@protoc_insertion_point(field_get:TryImproveRequest.approach)
   return static_cast< ::TryImproveRequest_Approach >(approach_);
 }
- void TryImproveRequest::set_approach(::TryImproveRequest_Approach value) {
+void TryImproveRequest::set_approach(::TryImproveRequest_Approach value) {
   assert(::TryImproveRequest_Approach_IsValid(value));
   set_has_approach();
   approach_ = value;
@@ -2622,49 +2535,57 @@ void TryImproveRequest::clear_approach() {
 
 // optional string seed = 6;
 bool TryImproveRequest::has_seed() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 void TryImproveRequest::set_has_seed() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000008u;
 }
 void TryImproveRequest::clear_has_seed() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 void TryImproveRequest::clear_seed() {
   seed_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   clear_has_seed();
 }
- const ::std::string& TryImproveRequest::seed() const {
+const ::std::string& TryImproveRequest::seed() const {
   // @@protoc_insertion_point(field_get:TryImproveRequest.seed)
-  return seed_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return seed_.GetNoArena();
 }
- void TryImproveRequest::set_seed(const ::std::string& value) {
+void TryImproveRequest::set_seed(const ::std::string& value) {
   set_has_seed();
   seed_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:TryImproveRequest.seed)
 }
- void TryImproveRequest::set_seed(const char* value) {
+#if LANG_CXX11
+void TryImproveRequest::set_seed(::std::string&& value) {
+  set_has_seed();
+  seed_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:TryImproveRequest.seed)
+}
+#endif
+void TryImproveRequest::set_seed(const char* value) {
   set_has_seed();
   seed_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:TryImproveRequest.seed)
 }
- void TryImproveRequest::set_seed(const char* value, size_t size) {
+void TryImproveRequest::set_seed(const char* value, size_t size) {
   set_has_seed();
   seed_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:TryImproveRequest.seed)
 }
- ::std::string* TryImproveRequest::mutable_seed() {
+::std::string* TryImproveRequest::mutable_seed() {
   set_has_seed();
   // @@protoc_insertion_point(field_mutable:TryImproveRequest.seed)
   return seed_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* TryImproveRequest::release_seed() {
+::std::string* TryImproveRequest::release_seed() {
   // @@protoc_insertion_point(field_release:TryImproveRequest.seed)
   clear_has_seed();
   return seed_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void TryImproveRequest::set_allocated_seed(::std::string* seed) {
+void TryImproveRequest::set_allocated_seed(::std::string* seed) {
   if (seed != NULL) {
     set_has_seed();
   } else {
@@ -2688,11 +2609,11 @@ void TryImproveRequest::clear_iters() {
   iters_ = 0;
   clear_has_iters();
 }
- ::google::protobuf::int32 TryImproveRequest::iters() const {
+::google::protobuf::int32 TryImproveRequest::iters() const {
   // @@protoc_insertion_point(field_get:TryImproveRequest.iters)
   return iters_;
 }
- void TryImproveRequest::set_iters(::google::protobuf::int32 value) {
+void TryImproveRequest::set_iters(::google::protobuf::int32 value) {
   set_has_iters();
   iters_ = value;
   // @@protoc_insertion_point(field_set:TryImproveRequest.iters)
@@ -2712,11 +2633,11 @@ void TryImproveRequest::clear_maxbest() {
   maxbest_ = 0;
   clear_has_maxbest();
 }
- ::google::protobuf::int32 TryImproveRequest::maxbest() const {
+::google::protobuf::int32 TryImproveRequest::maxbest() const {
   // @@protoc_insertion_point(field_get:TryImproveRequest.maxbest)
   return maxbest_;
 }
- void TryImproveRequest::set_maxbest(::google::protobuf::int32 value) {
+void TryImproveRequest::set_maxbest(::google::protobuf::int32 value) {
   set_has_maxbest();
   maxbest_ = value;
   // @@protoc_insertion_point(field_set:TryImproveRequest.maxbest)
@@ -2735,27 +2656,30 @@ const int TryImproveResponse::kItersBetterFieldNumber;
 
 TryImproveResponse::TryImproveResponse()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_marionet_2eproto::InitDefaults();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:TryImproveResponse)
 }
-
-void TryImproveResponse::InitAsDefaultInstance() {
-}
-
 TryImproveResponse::TryImproveResponse(const TryImproveResponse& from)
   : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
-  SharedCtor();
-  MergeFrom(from);
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      _cached_size_(0),
+      inputs_(from.inputs_),
+      score_(from.score_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&iters_tried_, &from.iters_tried_,
+    reinterpret_cast<char*>(&iters_better_) -
+    reinterpret_cast<char*>(&iters_tried_) + sizeof(iters_better_));
   // @@protoc_insertion_point(copy_constructor:TryImproveResponse)
 }
 
 void TryImproveResponse::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  iters_tried_ = 0;
-  iters_better_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  ::memset(&iters_tried_, 0, reinterpret_cast<char*>(&iters_better_) -
+    reinterpret_cast<char*>(&iters_tried_) + sizeof(iters_better_));
 }
 
 TryImproveResponse::~TryImproveResponse() {
@@ -2764,8 +2688,6 @@ TryImproveResponse::~TryImproveResponse() {
 }
 
 void TryImproveResponse::SharedDtor() {
-  if (this != default_instance_) {
-  }
 }
 
 void TryImproveResponse::SetCachedSize(int size) const {
@@ -2774,16 +2696,14 @@ void TryImproveResponse::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* TryImproveResponse::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return TryImproveResponse_descriptor_;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[5].descriptor;
 }
 
 const TryImproveResponse& TryImproveResponse::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_marionet_2eproto();
-  return *default_instance_;
+  protobuf_marionet_2eproto::InitDefaults();
+  return *internal_default_instance();
 }
-
-TryImproveResponse* TryImproveResponse::default_instance_ = NULL;
 
 TryImproveResponse* TryImproveResponse::New(::google::protobuf::Arena* arena) const {
   TryImproveResponse* n = new TryImproveResponse;
@@ -2795,33 +2715,14 @@ TryImproveResponse* TryImproveResponse::New(::google::protobuf::Arena* arena) co
 
 void TryImproveResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:TryImproveResponse)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(TryImproveResponse, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<TryImproveResponse*>(16)->f)
-#endif
-
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
-
-  ZR_(iters_tried_, iters_better_);
-
-#undef ZR_HELPER_
-#undef ZR_
-
   inputs_.Clear();
   score_.Clear();
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
+  if (_has_bits_[0 / 32] & 3u) {
+    ::memset(&iters_tried_, 0, reinterpret_cast<char*>(&iters_better_) -
+      reinterpret_cast<char*>(&iters_tried_) + sizeof(iters_better_));
   }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
 }
 
 bool TryImproveResponse::MergePartialFromCodedStream(
@@ -2830,70 +2731,60 @@ bool TryImproveResponse::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:TryImproveResponse)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // repeated bytes inputs = 1;
       case 1: {
-        if (tag == 10) {
-         parse_inputs:
+        if (tag == 10u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->add_inputs()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(10)) goto parse_inputs;
-        if (input->ExpectTag(17)) goto parse_score;
         break;
       }
 
       // repeated double score = 2;
       case 2: {
-        if (tag == 17) {
-         parse_score:
+        if (tag == 17u) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
-                 1, 17, input, this->mutable_score())));
-        } else if (tag == 18) {
+                 1, 17u, input, this->mutable_score())));
+        } else if (tag == 18u) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, this->mutable_score())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(17)) goto parse_score;
-        if (input->ExpectTag(24)) goto parse_iters_tried;
         break;
       }
 
       // optional int32 iters_tried = 3;
       case 3: {
-        if (tag == 24) {
-         parse_iters_tried:
+        if (tag == 24u) {
+          set_has_iters_tried();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &iters_tried_)));
-          set_has_iters_tried();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(32)) goto parse_iters_better;
         break;
       }
 
       // optional int32 iters_better = 4;
       case 4: {
-        if (tag == 32) {
-         parse_iters_better:
+        if (tag == 32u) {
+          set_has_iters_better();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &iters_better_)));
-          set_has_iters_better();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectAtEnd()) goto success;
         break;
       }
 
@@ -2953,6 +2844,7 @@ void TryImproveResponse::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* TryImproveResponse::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic;  // Unused
   // @@protoc_insertion_point(serialize_to_array_start:TryImproveResponse)
   // repeated bytes inputs = 1;
   for (int i = 0; i < this->inputs_size(); i++) {
@@ -2984,11 +2876,33 @@ void TryImproveResponse::SerializeWithCachedSizes(
   return target;
 }
 
-int TryImproveResponse::ByteSize() const {
+size_t TryImproveResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:TryImproveResponse)
-  int total_size = 0;
+  size_t total_size = 0;
 
-  if (_has_bits_[2 / 32] & 12u) {
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  // repeated bytes inputs = 1;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->inputs_size());
+  for (int i = 0; i < this->inputs_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::BytesSize(
+      this->inputs(i));
+  }
+
+  // repeated double score = 2;
+  {
+    unsigned int count = this->score_size();
+    size_t data_size = 8UL * count;
+    total_size += 1 *
+                  ::google::protobuf::internal::FromIntSize(this->score_size());
+    total_size += data_size;
+  }
+
+  if (_has_bits_[0 / 32] & 3u) {
     // optional int32 iters_tried = 3;
     if (has_iters_tried()) {
       total_size += 1 +
@@ -3004,37 +2918,17 @@ int TryImproveResponse::ByteSize() const {
     }
 
   }
-  // repeated bytes inputs = 1;
-  total_size += 1 * this->inputs_size();
-  for (int i = 0; i < this->inputs_size(); i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::BytesSize(
-      this->inputs(i));
-  }
-
-  // repeated double score = 2;
-  {
-    int data_size = 0;
-    data_size = 8 * this->score_size();
-    total_size += 1 * this->score_size() + data_size;
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void TryImproveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:TryImproveResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const TryImproveResponse* source = 
+  GOOGLE_DCHECK_NE(&from, this);
+  const TryImproveResponse* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const TryImproveResponse>(
           &from);
   if (source == NULL) {
@@ -3048,21 +2942,17 @@ void TryImproveResponse::MergeFrom(const ::google::protobuf::Message& from) {
 
 void TryImproveResponse::MergeFrom(const TryImproveResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:TryImproveResponse)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   inputs_.MergeFrom(from.inputs_);
   score_.MergeFrom(from.score_);
-  if (from._has_bits_[2 / 32] & (0xffu << (2 % 32))) {
+  if (from._has_bits_[0 / 32] & 3u) {
     if (from.has_iters_tried()) {
       set_iters_tried(from.iters_tried());
     }
     if (from.has_iters_better()) {
       set_iters_better(from.iters_better());
     }
-  }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
   }
 }
 
@@ -3081,7 +2971,6 @@ void TryImproveResponse::CopyFrom(const TryImproveResponse& from) {
 }
 
 bool TryImproveResponse::IsInitialized() const {
-
   return true;
 }
 
@@ -3100,11 +2989,8 @@ void TryImproveResponse::InternalSwap(TryImproveResponse* other) {
 }
 
 ::google::protobuf::Metadata TryImproveResponse::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = TryImproveResponse_descriptor_;
-  metadata.reflection = TryImproveResponse_reflection_;
-  return metadata;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[5];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -3117,49 +3003,49 @@ int TryImproveResponse::inputs_size() const {
 void TryImproveResponse::clear_inputs() {
   inputs_.Clear();
 }
- const ::std::string& TryImproveResponse::inputs(int index) const {
+const ::std::string& TryImproveResponse::inputs(int index) const {
   // @@protoc_insertion_point(field_get:TryImproveResponse.inputs)
   return inputs_.Get(index);
 }
- ::std::string* TryImproveResponse::mutable_inputs(int index) {
+::std::string* TryImproveResponse::mutable_inputs(int index) {
   // @@protoc_insertion_point(field_mutable:TryImproveResponse.inputs)
   return inputs_.Mutable(index);
 }
- void TryImproveResponse::set_inputs(int index, const ::std::string& value) {
+void TryImproveResponse::set_inputs(int index, const ::std::string& value) {
   // @@protoc_insertion_point(field_set:TryImproveResponse.inputs)
   inputs_.Mutable(index)->assign(value);
 }
- void TryImproveResponse::set_inputs(int index, const char* value) {
+void TryImproveResponse::set_inputs(int index, const char* value) {
   inputs_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set_char:TryImproveResponse.inputs)
 }
- void TryImproveResponse::set_inputs(int index, const void* value, size_t size) {
+void TryImproveResponse::set_inputs(int index, const void* value, size_t size) {
   inputs_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
   // @@protoc_insertion_point(field_set_pointer:TryImproveResponse.inputs)
 }
- ::std::string* TryImproveResponse::add_inputs() {
+::std::string* TryImproveResponse::add_inputs() {
   // @@protoc_insertion_point(field_add_mutable:TryImproveResponse.inputs)
   return inputs_.Add();
 }
- void TryImproveResponse::add_inputs(const ::std::string& value) {
+void TryImproveResponse::add_inputs(const ::std::string& value) {
   inputs_.Add()->assign(value);
   // @@protoc_insertion_point(field_add:TryImproveResponse.inputs)
 }
- void TryImproveResponse::add_inputs(const char* value) {
+void TryImproveResponse::add_inputs(const char* value) {
   inputs_.Add()->assign(value);
   // @@protoc_insertion_point(field_add_char:TryImproveResponse.inputs)
 }
- void TryImproveResponse::add_inputs(const void* value, size_t size) {
+void TryImproveResponse::add_inputs(const void* value, size_t size) {
   inputs_.Add()->assign(reinterpret_cast<const char*>(value), size);
   // @@protoc_insertion_point(field_add_pointer:TryImproveResponse.inputs)
 }
- const ::google::protobuf::RepeatedPtrField< ::std::string>&
+const ::google::protobuf::RepeatedPtrField< ::std::string>&
 TryImproveResponse::inputs() const {
   // @@protoc_insertion_point(field_list:TryImproveResponse.inputs)
   return inputs_;
 }
- ::google::protobuf::RepeatedPtrField< ::std::string>*
+::google::protobuf::RepeatedPtrField< ::std::string>*
 TryImproveResponse::mutable_inputs() {
   // @@protoc_insertion_point(field_mutable_list:TryImproveResponse.inputs)
   return &inputs_;
@@ -3172,24 +3058,24 @@ int TryImproveResponse::score_size() const {
 void TryImproveResponse::clear_score() {
   score_.Clear();
 }
- double TryImproveResponse::score(int index) const {
+double TryImproveResponse::score(int index) const {
   // @@protoc_insertion_point(field_get:TryImproveResponse.score)
   return score_.Get(index);
 }
- void TryImproveResponse::set_score(int index, double value) {
+void TryImproveResponse::set_score(int index, double value) {
   score_.Set(index, value);
   // @@protoc_insertion_point(field_set:TryImproveResponse.score)
 }
- void TryImproveResponse::add_score(double value) {
+void TryImproveResponse::add_score(double value) {
   score_.Add(value);
   // @@protoc_insertion_point(field_add:TryImproveResponse.score)
 }
- const ::google::protobuf::RepeatedField< double >&
+const ::google::protobuf::RepeatedField< double >&
 TryImproveResponse::score() const {
   // @@protoc_insertion_point(field_list:TryImproveResponse.score)
   return score_;
 }
- ::google::protobuf::RepeatedField< double >*
+::google::protobuf::RepeatedField< double >*
 TryImproveResponse::mutable_score() {
   // @@protoc_insertion_point(field_mutable_list:TryImproveResponse.score)
   return &score_;
@@ -3197,23 +3083,23 @@ TryImproveResponse::mutable_score() {
 
 // optional int32 iters_tried = 3;
 bool TryImproveResponse::has_iters_tried() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000001u) != 0;
 }
 void TryImproveResponse::set_has_iters_tried() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000001u;
 }
 void TryImproveResponse::clear_has_iters_tried() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000001u;
 }
 void TryImproveResponse::clear_iters_tried() {
   iters_tried_ = 0;
   clear_has_iters_tried();
 }
- ::google::protobuf::int32 TryImproveResponse::iters_tried() const {
+::google::protobuf::int32 TryImproveResponse::iters_tried() const {
   // @@protoc_insertion_point(field_get:TryImproveResponse.iters_tried)
   return iters_tried_;
 }
- void TryImproveResponse::set_iters_tried(::google::protobuf::int32 value) {
+void TryImproveResponse::set_iters_tried(::google::protobuf::int32 value) {
   set_has_iters_tried();
   iters_tried_ = value;
   // @@protoc_insertion_point(field_set:TryImproveResponse.iters_tried)
@@ -3221,23 +3107,23 @@ void TryImproveResponse::clear_iters_tried() {
 
 // optional int32 iters_better = 4;
 bool TryImproveResponse::has_iters_better() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
 void TryImproveResponse::set_has_iters_better() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000002u;
 }
 void TryImproveResponse::clear_has_iters_better() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000002u;
 }
 void TryImproveResponse::clear_iters_better() {
   iters_better_ = 0;
   clear_has_iters_better();
 }
- ::google::protobuf::int32 TryImproveResponse::iters_better() const {
+::google::protobuf::int32 TryImproveResponse::iters_better() const {
   // @@protoc_insertion_point(field_get:TryImproveResponse.iters_better)
   return iters_better_;
 }
- void TryImproveResponse::set_iters_better(::google::protobuf::int32 value) {
+void TryImproveResponse::set_iters_better(::google::protobuf::int32 value) {
   set_has_iters_better();
   iters_better_ = value;
   // @@protoc_insertion_point(field_set:TryImproveResponse.iters_better)
@@ -3254,28 +3140,35 @@ const int HelperRequest::kTryimproveFieldNumber;
 
 HelperRequest::HelperRequest()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_marionet_2eproto::InitDefaults();
+  }
   SharedCtor();
   // @@protoc_insertion_point(constructor:HelperRequest)
 }
-
-void HelperRequest::InitAsDefaultInstance() {
-  playfun_ = const_cast< ::PlayFunRequest*>(&::PlayFunRequest::default_instance());
-  tryimprove_ = const_cast< ::TryImproveRequest*>(&::TryImproveRequest::default_instance());
-}
-
 HelperRequest::HelperRequest(const HelperRequest& from)
   : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
-  SharedCtor();
-  MergeFrom(from);
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_playfun()) {
+    playfun_ = new ::PlayFunRequest(*from.playfun_);
+  } else {
+    playfun_ = NULL;
+  }
+  if (from.has_tryimprove()) {
+    tryimprove_ = new ::TryImproveRequest(*from.tryimprove_);
+  } else {
+    tryimprove_ = NULL;
+  }
   // @@protoc_insertion_point(copy_constructor:HelperRequest)
 }
 
 void HelperRequest::SharedCtor() {
   _cached_size_ = 0;
-  playfun_ = NULL;
-  tryimprove_ = NULL;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  ::memset(&playfun_, 0, reinterpret_cast<char*>(&tryimprove_) -
+    reinterpret_cast<char*>(&playfun_) + sizeof(tryimprove_));
 }
 
 HelperRequest::~HelperRequest() {
@@ -3284,8 +3177,10 @@ HelperRequest::~HelperRequest() {
 }
 
 void HelperRequest::SharedDtor() {
-  if (this != default_instance_) {
+  if (this != internal_default_instance()) {
     delete playfun_;
+  }
+  if (this != internal_default_instance()) {
     delete tryimprove_;
   }
 }
@@ -3296,16 +3191,14 @@ void HelperRequest::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
 const ::google::protobuf::Descriptor* HelperRequest::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return HelperRequest_descriptor_;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[6].descriptor;
 }
 
 const HelperRequest& HelperRequest::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_marionet_2eproto();
-  return *default_instance_;
+  protobuf_marionet_2eproto::InitDefaults();
+  return *internal_default_instance();
 }
-
-HelperRequest* HelperRequest::default_instance_ = NULL;
 
 HelperRequest* HelperRequest::New(::google::protobuf::Arena* arena) const {
   HelperRequest* n = new HelperRequest;
@@ -3319,16 +3212,16 @@ void HelperRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:HelperRequest)
   if (_has_bits_[0 / 32] & 3u) {
     if (has_playfun()) {
-      if (playfun_ != NULL) playfun_->::PlayFunRequest::Clear();
+      GOOGLE_DCHECK(playfun_ != NULL);
+      playfun_->::PlayFunRequest::Clear();
     }
     if (has_tryimprove()) {
-      if (tryimprove_ != NULL) tryimprove_->::TryImproveRequest::Clear();
+      GOOGLE_DCHECK(tryimprove_ != NULL);
+      tryimprove_->::TryImproveRequest::Clear();
     }
   }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
 }
 
 bool HelperRequest::MergePartialFromCodedStream(
@@ -3337,32 +3230,29 @@ bool HelperRequest::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:HelperRequest)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional .PlayFunRequest playfun = 1;
       case 1: {
-        if (tag == 10) {
+        if (tag == 10u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_playfun()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_tryimprove;
         break;
       }
 
       // optional .TryImproveRequest tryimprove = 2;
       case 2: {
-        if (tag == 18) {
-         parse_tryimprove:
+        if (tag == 18u) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_tryimprove()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectAtEnd()) goto success;
         break;
       }
 
@@ -3412,6 +3302,7 @@ void HelperRequest::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* HelperRequest::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic;  // Unused
   // @@protoc_insertion_point(serialize_to_array_start:HelperRequest)
   // optional .PlayFunRequest playfun = 1;
   if (has_playfun()) {
@@ -3435,10 +3326,15 @@ void HelperRequest::SerializeWithCachedSizes(
   return target;
 }
 
-int HelperRequest::ByteSize() const {
+size_t HelperRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:HelperRequest)
-  int total_size = 0;
+  size_t total_size = 0;
 
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
   if (_has_bits_[0 / 32] & 3u) {
     // optional .PlayFunRequest playfun = 1;
     if (has_playfun()) {
@@ -3455,23 +3351,17 @@ int HelperRequest::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
+  _cached_size_ = cached_size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
   return total_size;
 }
 
 void HelperRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:HelperRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const HelperRequest* source = 
+  GOOGLE_DCHECK_NE(&from, this);
+  const HelperRequest* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const HelperRequest>(
           &from);
   if (source == NULL) {
@@ -3485,19 +3375,15 @@ void HelperRequest::MergeFrom(const ::google::protobuf::Message& from) {
 
 void HelperRequest::MergeFrom(const HelperRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:HelperRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._has_bits_[0 / 32] & 3u) {
     if (from.has_playfun()) {
       mutable_playfun()->::PlayFunRequest::MergeFrom(from.playfun());
     }
     if (from.has_tryimprove()) {
       mutable_tryimprove()->::TryImproveRequest::MergeFrom(from.tryimprove());
     }
-  }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
   }
 }
 
@@ -3516,7 +3402,6 @@ void HelperRequest::CopyFrom(const HelperRequest& from) {
 }
 
 bool HelperRequest::IsInitialized() const {
-
   return true;
 }
 
@@ -3533,11 +3418,8 @@ void HelperRequest::InternalSwap(HelperRequest* other) {
 }
 
 ::google::protobuf::Metadata HelperRequest::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = HelperRequest_descriptor_;
-  metadata.reflection = HelperRequest_reflection_;
-  return metadata;
+  protobuf_marionet_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_marionet_2eproto::file_level_metadata[6];
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -3559,7 +3441,8 @@ void HelperRequest::clear_playfun() {
 }
 const ::PlayFunRequest& HelperRequest::playfun() const {
   // @@protoc_insertion_point(field_get:HelperRequest.playfun)
-  return playfun_ != NULL ? *playfun_ : *default_instance_->playfun_;
+  return playfun_ != NULL ? *playfun_
+                         : *::PlayFunRequest::internal_default_instance();
 }
 ::PlayFunRequest* HelperRequest::mutable_playfun() {
   set_has_playfun();
@@ -3603,7 +3486,8 @@ void HelperRequest::clear_tryimprove() {
 }
 const ::TryImproveRequest& HelperRequest::tryimprove() const {
   // @@protoc_insertion_point(field_get:HelperRequest.tryimprove)
-  return tryimprove_ != NULL ? *tryimprove_ : *default_instance_->tryimprove_;
+  return tryimprove_ != NULL ? *tryimprove_
+                         : *::TryImproveRequest::internal_default_instance();
 }
 ::TryImproveRequest* HelperRequest::mutable_tryimprove() {
   set_has_tryimprove();
